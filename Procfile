@@ -1,1 +1,1 @@
-web: gunicorn codestar.wsgi
+web: gunicorn inphysical_plans.wsgi
