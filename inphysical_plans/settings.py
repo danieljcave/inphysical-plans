@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ['8000-danieljcave-inphysical-p-hvpjhc79fd.us2.codeanyapp.com',
-                 'inphysical-plans-e97fa8a6618e.herokuapp.com/']
+                 'inphysical-plans-e97fa8a6618e.herokuapp.com']
 
 
 # Application definition
