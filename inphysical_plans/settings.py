@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-danieljcave-inphysical-p-hvpjhc79fd.us2.codeanyapp.com',
+ALLOWED_HOSTS = ['8000-danieljcave-inphysical-p-0ljkaned4a.us2.codeanyapp.com',
                  'inphysical-plans-e97fa8a6618e.herokuapp.com']
 
 
