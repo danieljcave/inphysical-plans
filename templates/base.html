@@ -7,10 +7,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
@@ -42,7 +42,6 @@
                         <a class="nav-link" href="#">About</a>
                     </li>
                     <!-- Added Until code is ready for user authentication
-
                     <li class="nav-item">
                         <a class="nav-link" href="#">Logout</a>
                     </li> -->
@@ -58,5 +57,37 @@
         </div>
     </nav>
 </body>
+
+<!-- Footer -->
+<footer class="py-3 bg-secondary-subtle fixed-bottom">
+    <div class="container">
+        <ul class="nav justify-content-center mb-3 footer-break">
+            <li class="nav-item">
+                <a href="https://twitter.com/home/" target=”_blank” class="nav-link"><i
+                        class="fab fa-twitter f-icons"></i></a>
+            </li>
+            <li class="nav-item">
+                <a href="https://www.facebook.com/" target=”_blank” class="nav-link"><i
+                        class="fab fa-facebook f-icons"></i></a>
+            </li>
+            <li class="nav-item">
+                <a href="https://www.instagram.com/" target=”_blank” class="nav-link"><i
+                        class="fab fa-instagram f-icons"></i></a>
+            </li>
+            <li class="nav-item">
+                <a href="https://www.linkedin.com/in/daniel-cave/" target=”_blank” class="nav-link"><i
+                        class="fab fa-linkedin f-icons"></i></a>
+            </li>
+        </ul>
+        <div class="footer-text text-center">Copywright &copy; 2023 - <span id="current-year"></span> - Daniel Cave
+        </div>
+    </div>
+    </div>
+</footer>
+
+<!-- Shows current year footer script for copywright -->
+<script>
+    document.getElementById("current-year").innerHTML = (new Date().getFullYear());
+</script>
 
 </html>
