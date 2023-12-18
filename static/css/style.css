@@ -2,6 +2,10 @@ body {
     background-color: rgb(192, 192, 192);
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
+}
+
+/* Navbar */
+.navbar {
     letter-spacing: 1px;
 }
 
@@ -24,4 +28,51 @@ body {
 .footer-text {
     font-size: 1rem;
     color: black;
+}
+
+/* Blog Post Cards */
+.card {
+    border: none;
+    background-color: transparent;
+}
+
+.image-container {
+    position: relative;
+}
+
+.blog-author {
+    position: absolute;
+    bottom: 5%;
+    min-width: 30%;
+    background-color: #8B0000;
+    border: 1px solid white;
+    border-left: 0;
+}
+
+.author-text {
+    color: white;
+    margin: 4px;
+    text-transform: capitalize;
+}
+
+.blog-post-link {
+    text-decoration: none;
+    color: black;
+}
+
+.card-title {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.blog-post-link:hover {
+    color: #8B0000;
+}
+
+.card-border {
+    border: 1px solid;
+    border-top: 0;
+    padding: 2%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }

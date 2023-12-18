@@ -1,1 +1,41 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Blog Post Column list -->
+        <div class="col-12 mt-4 left">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="image-container">
+                                <img class="card-img-top"
+                                    src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" />
+                                <div class="blog-author">
+                                    <p class="author-text">Author: Author Name</p>
+                                </div>
+                            </div>
+                            <div class="card-border">
+                                <a href="#" class="blog-post-link">
+                                    <h2 class="card-title">Title Text</h2>
+                                    <p class="card-text">Excerpt Text</p>
+                                </a>
+                                <hr />
+                                <p class="card-text h6">Date and time created on</p>
+                                <p class="card-text h6">
+                                    <i class="far fa-heart"></i> 1 <i class="far fa-star"></i> 1</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    {% endblock content %}
