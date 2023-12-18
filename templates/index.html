@@ -5,12 +5,16 @@
         <!-- Blog Post Column list -->
         <div class="col-12 mt-4 left">
             <div class="row">
-                {% for post in post %}
+                {% for post in post_list %}
                 <div class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="image-container">
+                                {% if "placeholder" in post.image_upload.url %}
                                 <img class="card-img-top" src="https://i.imgur.com/sWaz0pA.jpg" />
+                                {% else %}
+                                <img class="card-img-top" src="{{ post.image_upload.url }}" />
+                                {% endif %}
                                 <div class="blog-author">
                                     <p class="author-text">Author: {{ post.author }}</p>
                                 </div>
@@ -23,7 +27,7 @@
                                 <hr />
                                 <p class="card-text h6">{{ post.date_created }}</p>
                                 <p class="card-text h6">
-                                    <i class="far fa-heart"></i> 1 <i class="far fa-star"></i> 1
+                                    <i class="far fa-heart"></i> {{ post.total_likes }}
                                 </p>
                             </div>
                         </div>
@@ -34,6 +38,21 @@
             <div class="row">{% endif %} {% endfor %}</div>
         </div>
     </div>
+    {% if is_paginated %}
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li>
+                <a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV</a>
+            </li>
+            {% endif %} {% if page_obj.has_next %}
+            <li>
+                <a href="?page={{ page_obj.next_page_number }}" class="page-link">NEXT &raquo;</a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
 </div>
 
 {% endblock content %}

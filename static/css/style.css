@@ -65,7 +65,8 @@ body {
     font-weight: 700;
 }
 
-.blog-post-link:hover {
+.blog-post-link:hover,
+.page-link {
     color: #8B0000;
 }
 
