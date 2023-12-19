@@ -30,10 +30,21 @@ body {
     color: black;
 }
 
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #f5f5f5;
+}
+
 /* Blog Post Cards */
 .card {
     border: none;
     background-color: transparent;
+}
+
+.card-body {
+    padding: 0;
 }
 
 .image-container {
@@ -61,8 +72,7 @@ body {
 }
 
 .card-title {
-    font-size: 2rem;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .blog-post-link:hover,
