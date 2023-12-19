@@ -24,3 +24,18 @@ class Post(models.Model):
 
     def total_likes(self):
         return self.likes.count()
+
+
+class Comment(models.Model):
+    post = models.ForeignKey(
+        Post, on_delete=models.CASCADE, related_name="comments")
+    name = models.CharField(max_length=80)
+    email = models.EmailField()
+    body = models.TextField()
+    date_created = models.DateTimeField(default=timezone.now)
+
+    class Meta:
+        ordering = ['date_created']
+
+    def __str__(self):
+        return f"Commented {self.body} by {self.name}"
