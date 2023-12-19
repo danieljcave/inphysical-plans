@@ -9,3 +9,23 @@ class PostList(generic.ListView):
     queryset = Post.objects.all().order_by("-date_created")
     template_name = "index.html"
     paginate_by = 6
+
+
+class BlogPost(View):
+
+    def get(self, request, slug, *args, **kwargs):
+        post = get_object_or_404(slug=slug)
+        comments = post.comments.order_by('date_created')
+        liked = False
+        if post.likes.exists():
+            liked = True
+
+        return render(
+            request,
+            "blog_post.html",
+            {
+                "post": post,
+                "comments": comments,
+                "liked": liked
+            },
+        )
