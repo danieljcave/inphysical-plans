@@ -1,5 +1,9 @@
 {% load static %}
 
+{% url 'home' as home_url %}
+{% url 'account_login' as login_url %}
+{% url 'account_signup' as signup_url %}
+{% url 'account_logout' as logout_url %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,21 +43,26 @@
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
                     </li>
+                    {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                     </li>
-                    <!-- Added Until code is ready for user authentication
+                    {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Logout</a>
-                    </li> -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Register</a>
+                        <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Login</a>
+                        <a class="nav-link" href="{% url 'account_login' %}">Login</a>
                     </li>
-
+                    {% endif %}
                 </ul>
+                <span class="navbar-text text-muted">
+                    {% if user.is_authenticated %}
+                    <span class="text-end login-text">You are logged in as {{ user.username }}</span>
+                    {% else %}
+                    <span class="text-end login-text">You are not logged in</span>
+                    {% endif %}
+                </span>
             </div>
         </div>
     </nav>

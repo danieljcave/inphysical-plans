@@ -9,6 +9,10 @@ body {
     letter-spacing: 1px;
 }
 
+.login-text {
+    padding: 0.5rem;
+}
+
 /* Footer Icons */
 .f-icons {
     color: black;
@@ -107,4 +111,28 @@ body {
     left: 0;
     width: 100%;
     color: black;
+}
+
+/* Accounts */
+.btn-signup {
+    background-color: #003cff;
+    color: #fff;
+    margin-bottom: 2%;
+}
+
+.btn-signup:hover,
+.btn-signup:active {
+    background-color: #fff;
+    color: #003cff;
+}
+
+.link {
+    color: #23BBBB;
+    text-decoration: none;
+}
+
+.link:hover,
+.link:active {
+    color: #003cff;
+    text-decoration: underline;
 }
