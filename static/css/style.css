@@ -136,3 +136,17 @@ body {
     color: #003cff;
     text-decoration: underline;
 }
+
+/* Like Button */
+.btn-like {
+    color: #003cff;
+    border: none;
+    background: transparent;
+}
+
+.btn-like:hover,
+.btn-like:active {
+    color: #003cff;
+    background: transparent;
+    border: none;
+}
