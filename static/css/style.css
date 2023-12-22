@@ -117,7 +117,7 @@ body {
 .btn-signup {
     background-color: #003cff;
     color: #fff;
-    margin-bottom: 2%;
+    margin: 1rem 0 1rem;
 }
 
 .btn-signup:hover,
