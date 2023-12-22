@@ -17,7 +17,7 @@ class BlogPost(View):
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.all()
         post = get_object_or_404(queryset, slug=slug)
-        comments = post.comments.order_by('date_created')
+        comments = post.comments.order_by('-date_created')
         liked = False
         if post.likes.exists():
             liked = True
@@ -49,20 +49,20 @@ class BlogPost(View):
             comment = comment_form.save(commit=False)
             comment.post = post
             comment.save()
-        else:
-            comment_form = CommentForm()
+            return HttpResponseRedirect(reverse('blog_post', args=[slug]))
 
-        return render(
-            request,
-            "blog_post.html",
-            {
-                "post": post,
-                "comments": comments,
-                "commented": True,
-                "comment_form": comment_form,
-                "liked": liked
-            },
-        )
+        else:
+            return render(
+                request,
+                "blog_post.html",
+                {
+                    "post": post,
+                    "comments": comments,
+                    "commented": True,
+                    "comment_form": comment_form,
+                    "liked": liked
+                },
+            )
 
 
 class LikePost(View):
