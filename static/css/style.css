@@ -68,19 +68,26 @@ body {
 
 @media (min-width: 768px) {
     .blog-preview img {
-        height: 200px;
+        height: 225px;
     }
 }
 
 @media (min-width: 992px) {
     .blog-preview img {
-        height: 250px;
+        height: 275px;
     }
 }
 
 @media (min-width: 1200px) {
     .blog-preview img {
-        height: 300px;
+        height: 350px;
+        width: 546px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .blog-preview img {
+        width: 636px;
     }
 }
 
