@@ -48,10 +48,40 @@ body {
     position: relative;
 }
 
-.image-container img {
+/* Preview Image for blog previews */
+.blog-preview {
+    position: relative;
+}
+
+.blog-preview img {
     max-inline-size: 100%;
     object-fit: cover;
-    max-height: 300px;
+    height: 300px;
+}
+
+/* Media Tags for blog previews */
+@media (min-width: 576px) {
+    .blog-preview img {
+        width: 516px;
+    }
+}
+
+@media (min-width: 768px) {
+    .blog-preview img {
+        height: 200px;
+    }
+}
+
+@media (min-width: 992px) {
+    .blog-preview img {
+        height: 250px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .blog-preview img {
+        height: 300px;
+    }
 }
 
 .blog-author {
