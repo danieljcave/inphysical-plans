@@ -5,13 +5,12 @@
             {% if "placeholder" in post.image_upload.url %}
             <img src="https://i.imgur.com/sWaz0pA.jpg" width="100%" />
             {% else %}
-            <img src=" {{ post.image_upload.url }}" width="100%">
+            <img src=" {{ post.image_upload.url }}" width="100%" />
             {% endif %}
             <div class="masthead-text">
                 <h1 class="blog-title">{{ post.title }}</h1>
                 <p class="blog-subtitle">{{ post.author }} | {{ post.date_created }}</p>
             </div>
-
         </div>
     </div>
 </div>
@@ -21,6 +20,9 @@
         <div class="col-xl-4">
             <a href="{% url 'update_post' post.slug %}" class="btn btn-signup m-1"><i class="fas fa-pen"></i> Update
                 this post</a>
+            <button type="button" class="btn btn-del m-1" data-toggle="modal" data-target="#postModal">
+                <i class="fas fa-trash"></i> Delete this post
+            </button>
         </div>
     </div>
 </div>
@@ -50,8 +52,7 @@
                         {% endif %}
                         <span class="text-secondary">{{ post.total_likes }} </span>
                         {% with comments.count as total_comments %}
-                        <strong class="text-secondary cmts"><i class="far fa-comments"
-                                style="padding-left: 0.5rem;"></i>
+                        <strong class="text-secondary cmts"><i class="far fa-comments" style="padding-left: 0.5rem"></i>
                             {{ total_comments }}</strong>
                         {% endwith %}
                     </strong>
@@ -63,7 +64,7 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <hr>
+            <hr />
         </div>
     </div>
 </div>
@@ -76,9 +77,7 @@
                 <div class="comments">
                     <p>
                         {{ comment.name }}
-                        <span>
-                            {{ comment.date_created }}
-                        </span> wrote:
+                        <span> {{ comment.date_created }} </span> wrote:
                     </p>
                     {{ comment.body | linebreaks }}
                 </div>
@@ -90,7 +89,7 @@
                 {% if user.is_authenticated %}
                 <h3>Leave a comment:</h3>
                 <p>Posting as: {{ user.username }}</p>
-                <form method="post" style="margin-top: 1em;">
+                <form method="post" style="margin-top: 1em">
                     {{ comment_form | crispy }} {% csrf_token %}
                     <button type="submit" class="btn btn-signup btn-lg">Submit</button>
                 </form>
@@ -99,10 +98,6 @@
         </div>
     </div>
 </div>
-
-
-
-
 
 
 

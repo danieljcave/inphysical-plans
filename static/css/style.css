@@ -1,6 +1,6 @@
 body {
     background: rgb(192, 192, 192);
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 600;
 }
 
@@ -20,7 +20,7 @@ body {
 }
 
 .f-icons:hover {
-    color: rgba(0, 0, 0, 0.5)
+    color: rgba(0, 0, 0, 0.5);
 }
 
 /* Footer Line Break */
@@ -95,7 +95,7 @@ body {
     position: absolute;
     bottom: 5%;
     min-width: 30%;
-    background-color: #8B0000;
+    background-color: #8b0000;
     border: 1px solid white;
     border-left: 0;
 }
@@ -117,7 +117,7 @@ body {
 
 .blog-post-link:hover,
 .page-link {
-    color: #8B0000;
+    color: #8b0000;
 }
 
 .card-border {
@@ -163,7 +163,7 @@ body {
 }
 
 .link {
-    color: #23BBBB;
+    color: #23bbbb;
     text-decoration: none;
 }
 
@@ -197,4 +197,18 @@ body {
 .btn-cnl:active {
     background-color: #fd7272;
     color: #000;
+    border: 1px solid #fd7272;
+}
+
+/* Delete Button */
+.btn-del {
+    background-color: #fc3030;
+    color: #000;
+}
+
+.btn-del:hover,
+.btn-del:active {
+    background-color: #fff;
+    color: #fc3030;
+    border: 1px solid #fc3030;
 }
