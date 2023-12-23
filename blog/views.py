@@ -43,17 +43,16 @@ class BlogPost(View):
             comment_form = CommentForm(data=request.POST)
 
             if comment_form.is_valid():
-                comment_form.instance.email = request.user.email
-                comment_form.instance.name = request.user.username
                 comment = comment_form.save(commit=False)
                 comment.post = post
-                comment.name = request.user
+                comment.author = request.user
                 comment.save()
 
         return HttpResponseRedirect(reverse('blog_post', args=[slug]))
 
 
-class CreatePost(LoginRequiredMixin, generic.CreateView):
+class CreatePost(LoginRequiredMixin,
+                 generic.CreateView):
     model = Post
     template_name = 'create_post.html'
     form_class = PostForm
@@ -63,7 +62,9 @@ class CreatePost(LoginRequiredMixin, generic.CreateView):
         return super().form_valid(form)
 
 
-class UpdatePost(LoginRequiredMixin, UserPassesTestMixin, generic.UpdateView):
+class UpdatePost(LoginRequiredMixin,
+                 UserPassesTestMixin,
+                 generic.UpdateView):
     model = Post
     template_name = 'update_post.html'
     form_class = PostForm
@@ -79,7 +80,31 @@ class UpdatePost(LoginRequiredMixin, UserPassesTestMixin, generic.UpdateView):
         return False
 
 
-class DeletePost(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView):
+class UpdateComment(LoginRequiredMixin,
+                    UserPassesTestMixin,
+                    generic.UpdateView):
+    model = Comment
+    template_name = 'update_comment.html'
+    form_class = CommentForm
+
+    def get_success_url(self):
+        slug = self.kwargs['slug']
+        return reverse_lazy('blog_post', kwargs={'slug': slug})
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+    def test_func(self):
+        post = self.get_object()
+        if self.request.user == comment.author:
+            return True
+        return False
+
+
+class DeletePost(LoginRequiredMixin,
+                 UserPassesTestMixin,
+                 generic.DeleteView):
     model = Post
     template_name = 'blog_post.html'
     success_url = reverse_lazy('home')

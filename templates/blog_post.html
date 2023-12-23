@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
+
 {% block content %}
+
 {% load crispy_forms_tags %}
+
 <div class="container">
     <div class="row">
         <div class="masthead-image">
@@ -84,15 +87,27 @@
                 {% for comment in comments %}
                 <div class="comments">
                     <p>
-                        {{ comment.name }}
-                        <span>
+                        {{ comment.author }}
+                        <span class="text-muted">
                             {{ comment.date_created }}
-                        </span>
-                        wrote:
+                        </span> wrote:
                     </p>
                     {{ comment.body | linebreaks }}
                 </div>
+                {% if request.user == comment.author %}
+                <a href="{% url 'update_comment' post.slug comment.pk %}" class="btn btn-signup">
+                    <i class="fa fa-edit"></i> Update this comment</a>
+                {% endif %}
+
+
+
+                <hr>
                 {% endfor %}
+
+                {% if not comments %}
+                <p class="text-secondary">No comments on this post.</p>
+                {% endif %}
+
             </div>
         </div>
         <div class="col-md-4 card">
