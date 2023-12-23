@@ -150,11 +150,10 @@ body {
     color: black;
 }
 
-/* Accounts */
+/* Buttons */
 .btn-signup {
     background-color: #003cff;
     color: #fff;
-    margin: 1rem 0 1rem;
 }
 
 .btn-signup:hover,
@@ -186,4 +185,16 @@ body {
     color: #003cff;
     background: transparent;
     border: none;
+}
+
+/* Cancel Button */
+.btn-cnl {
+    background-color: #363b3d;
+    color: #fff;
+}
+
+.btn-cnl:hover,
+.btn-cnl:active {
+    background-color: #fd7272;
+    color: #000;
 }
