@@ -96,7 +96,7 @@ class UpdateComment(LoginRequiredMixin,
         return super().form_valid(form)
 
     def test_func(self):
-        post = self.get_object()
+        comment = self.get_object()
         if self.request.user == comment.author:
             return True
         return False

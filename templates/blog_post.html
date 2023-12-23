@@ -95,12 +95,12 @@
                     {{ comment.body | linebreaks }}
                 </div>
                 {% if request.user == comment.author %}
-                <a href="{% url 'update_comment' post.slug comment.pk %}" class="btn btn-signup">
-                    <i class="fa fa-edit"></i> Update this comment</a>
+                <a href="{% url 'update_comment' post.slug comment.pk %}" class="btn btn-signup badge">
+                    <i class="fas fa-pen"></i> Update this comment</a>
+
+
+
                 {% endif %}
-
-
-
                 <hr>
                 {% endfor %}
 
