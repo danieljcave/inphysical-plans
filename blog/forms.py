@@ -14,7 +14,6 @@ class PostForm(forms.ModelForm):
         model = Post
         fields = [
             'title',
-            'excerpt',
             'image_upload',
             'content',
         ]

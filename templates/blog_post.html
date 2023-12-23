@@ -20,9 +20,7 @@
     <div class="row">
         <div class="col card">
             <div class="card-body">
-                <p class="card-text">
-                    {{ post.content | safe }}
-                </p>
+                <p class="card-text">{{ post.content | safe }}</p>
                 <div class="row">
                     <strong>
                         {% if user.is_authenticated %}

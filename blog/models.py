@@ -14,7 +14,6 @@ class Post(models.Model):
     date_created = models.DateTimeField(default=timezone.now)
     date_updated = models.DateTimeField(default=timezone.now)
     content = models.TextField()
-    excerpt = models.TextField(blank=True, max_length=200)
     image_upload = CloudinaryField('image', default='placeholder')
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
 
