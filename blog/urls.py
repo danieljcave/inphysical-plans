@@ -13,4 +13,6 @@ urlpatterns = [
          name='delete_post'),
     path('<slug:slug>/comment/update/<int:pk>', views.UpdateComment.as_view(),
          name='update_comment'),
+    path('<slug:slug>/comment-delete/<int:pk>', views.DeleteComment.as_view(),
+         name='delete_comment'),
 ]

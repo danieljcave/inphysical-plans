@@ -102,6 +102,26 @@ class UpdateComment(LoginRequiredMixin,
         return False
 
 
+class DeleteComment(LoginRequiredMixin,
+                    UserPassesTestMixin,
+                    generic.DeleteView):
+    model = Comment
+    template_name = 'blog_post.html'
+
+    def get_success_url(self):
+        slug = self.kwargs['slug']
+        return reverse_lazy('blog_post', kwargs={'slug': slug})
+
+    def delete(self, request, *args, **kwargs):
+        return super(DeleteComment, self).delete(request, *args, **kwargs)
+
+    def test_func(self):
+        comment = self.get_object()
+        if self.request.user == comment.author:
+            return True
+        return False
+
+
 class DeletePost(LoginRequiredMixin,
                  UserPassesTestMixin,
                  generic.DeleteView):
