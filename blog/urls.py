@@ -9,4 +9,6 @@ urlpatterns = [
     path('post/add/', views.CreatePost.as_view(), name="add_post"),
     path('<slug:slug>/update/', views.UpdatePost.as_view(),
          name='update_post'),
+    path('<slug:slug>/delete/', views.DeletePost.as_view(),
+         name='delete_post'),
 ]
