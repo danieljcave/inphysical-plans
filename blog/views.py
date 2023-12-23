@@ -5,6 +5,8 @@ from .models import Post, Comment
 from django.http import HttpResponseRedirect
 from .forms import CommentForm, PostForm
 from django.urls import reverse_lazy
+from django.contrib import messages
+from django.contrib.messages.views import SuccessMessageMixin
 
 
 class PostList(generic.ListView):
@@ -47,15 +49,18 @@ class BlogPost(View):
                 comment.post = post
                 comment.author = request.user
                 comment.save()
+                messages.success(request, 'Comment Added')
 
         return HttpResponseRedirect(reverse('blog_post', args=[slug]))
 
 
 class CreatePost(LoginRequiredMixin,
+                 SuccessMessageMixin,
                  generic.CreateView):
     model = Post
     template_name = 'create_post.html'
     form_class = PostForm
+    success_message = 'Added Post'
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -63,11 +68,13 @@ class CreatePost(LoginRequiredMixin,
 
 
 class UpdatePost(LoginRequiredMixin,
+                 SuccessMessageMixin,
                  UserPassesTestMixin,
                  generic.UpdateView):
     model = Post
     template_name = 'update_post.html'
     form_class = PostForm
+    success_message = 'Updated Post'
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -81,11 +88,13 @@ class UpdatePost(LoginRequiredMixin,
 
 
 class UpdateComment(LoginRequiredMixin,
+                    SuccessMessageMixin,
                     UserPassesTestMixin,
                     generic.UpdateView):
     model = Comment
     template_name = 'update_comment.html'
     form_class = CommentForm
+    success_message = 'Updated Comment'
 
     def get_success_url(self):
         slug = self.kwargs['slug']
@@ -103,16 +112,19 @@ class UpdateComment(LoginRequiredMixin,
 
 
 class DeleteComment(LoginRequiredMixin,
+                    SuccessMessageMixin,
                     UserPassesTestMixin,
                     generic.DeleteView):
     model = Comment
     template_name = 'blog_post.html'
+    success_message = 'Deleted Comment'
 
     def get_success_url(self):
         slug = self.kwargs['slug']
         return reverse_lazy('blog_post', kwargs={'slug': slug})
 
     def delete(self, request, *args, **kwargs):
+        messages.success(self.request, self.success_message)
         return super(DeleteComment, self).delete(request, *args, **kwargs)
 
     def test_func(self):
