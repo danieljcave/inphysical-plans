@@ -46,6 +46,9 @@
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
+                        <a class="nav-link" href="{% url 'add_post' %}">Create a Post</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                     </li>
                     {% else %}
@@ -59,9 +62,9 @@
                 </ul>
                 <span class="navbar-text text-muted">
                     {% if user.is_authenticated %}
-                    <span class="text-end login-text">You are logged in as {{ user.username }}</span>
+                    <span class="text-end login-text">Logged in as {{ user.username }}</span>
                     {% else %}
-                    <span class="text-end login-text">You are not logged in</span>
+                    <span class="text-end login-text"> You're not logged in</span>
                     {% endif %}
                 </span>
             </div>

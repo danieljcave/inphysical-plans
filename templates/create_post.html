@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load cloudinary %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mt-3 offset-md-2">
+            <h2>Add a Post:</h2>
+            <p>Share your workout plan with us!</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 mt-3 offset-md-2">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <br>
+                <button type="submit" class="btn btn-signup m-1">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -3,7 +3,7 @@ from django.views import generic, View
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Post, Comment
 from django.http import HttpResponseRedirect
-from .forms import CommentForm
+from .forms import CommentForm, PostForm
 
 
 class PostList(generic.ListView):
@@ -46,10 +46,20 @@ class BlogPost(View):
                 comment_form.instance.name = request.user.username
                 comment = comment_form.save(commit=False)
                 comment.post = post
-                comment.author = request.user
+                comment.name = request.user
                 comment.save()
 
         return HttpResponseRedirect(reverse('blog_post', args=[slug]))
+
+
+class CreatePost(LoginRequiredMixin, generic.CreateView):
+    model = Post
+    template_name = 'create_post.html'
+    form_class = PostForm
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
 
 
 class LikePost(LoginRequiredMixin, View):

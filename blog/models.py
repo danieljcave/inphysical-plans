@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
 from cloudinary.models import CloudinaryField
+from django.urls import reverse
+from django.template.defaultfilters import slugify
 
 
 class Post(models.Model):
@@ -24,6 +26,13 @@ class Post(models.Model):
 
     def total_likes(self):
         return self.likes.count()
+
+    def get_absolute_url(self):
+        return reverse('blog_post', kwargs={'slug': self.slug})
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+        return super().save(*args, **kwargs)
 
 
 class Comment(models.Model):
