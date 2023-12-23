@@ -64,7 +64,7 @@ class CreatePost(LoginRequiredMixin, generic.CreateView):
 
 class UpdatePost(LoginRequiredMixin, UserPassesTestMixin, generic.UpdateView):
     model = Post
-    template_name = 'post_update.html'
+    template_name = 'update_post.html'
     form_class = PostForm
 
     def form_valid(self, form):
