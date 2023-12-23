@@ -4,7 +4,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Post, Comment
 from django.http import HttpResponseRedirect
 from .forms import CommentForm
-from django.urls import reverse_lazy
 
 
 class PostList(generic.ListView):
@@ -63,21 +62,3 @@ class LikePost(LoginRequiredMixin, View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('blog_post', args=[slug]))
-
-
-class CommentDelete(LoginRequiredMixin, generic.DeleteView):
-    model = Comment
-    template_name = 'blog_post.html'
-
-    def get_success_url(self):
-        slug = self.kwargs['slug']
-        return reverse_lazy('post_blog', kwargs={'slug': slug})
-
-    def delete(self, request, *args, **kwargs):
-        return super(CommentDelete, self).delete(request, *args, **kwargs)
-
-    def test_func(self):
-        comment = self.get_object()
-        if self.request.user == comment.author:
-            return True
-        return False
