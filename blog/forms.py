@@ -4,12 +4,18 @@ from django import forms
 
 
 class CommentForm(forms.ModelForm):
+    """
+    Comments submition form
+    """
     class Meta:
         model = Comment
         fields = ('body',)
 
 
 class PostForm(forms.ModelForm):
+    """
+    Comments form for posting comments
+    """
     class Meta:
         model = Post
         fields = [
