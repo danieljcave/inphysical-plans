@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Displays custom 500 error to user if encountered -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mt-3 offset-md-2">
+            <h1>Error 500: Internal Server Error</h1>
+            <p>Sorry we seem to be having our own problem!</p>
+            <div>
+                <a href="{% url 'home' %}" class="btn btn-signup btn-lg">
+                    Take me home
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
