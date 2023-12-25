@@ -10,6 +10,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 
 
 class PostList(generic.ListView):
+    """Display list for blog preview paginated by 6"""
     model = Post
     queryset = Post.objects.all().order_by("-date_created")
     template_name = "index.html"
