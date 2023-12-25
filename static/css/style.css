@@ -13,37 +13,16 @@ body {
   padding: 0.5rem;
 }
 
-/* Footer Icons */
-.f-icons {
-  color: black;
-  font-size: 1.5rem;
-}
-
-.f-icons:hover {
-  color: rgba(0, 0, 0, 0.5);
-}
-
-/* Footer Line Break */
-.footer-break {
-  border-bottom: 1px solid black;
-}
-
-/* Footer Copywright Text */
-.footer-text {
-  font-size: 1rem;
-  color: black;
-}
-
 /* Blog Post Cards */
 .card {
   border: none;
   background-color: transparent;
 }
-
 .card-body {
   padding: 0;
 }
 
+/* Blog Image Container */
 .image-container {
   position: relative;
 }
@@ -91,6 +70,7 @@ body {
   }
 }
 
+/* Blog Preview Author Preview */
 .blog-author {
   position: absolute;
   bottom: 5%;
@@ -100,17 +80,20 @@ body {
   border-left: 0;
 }
 
+/* Blog Preview Author Text */
 .author-text {
   color: white;
   margin: 4px;
   text-transform: capitalize;
 }
 
+/* Blog Post Link */
 .blog-post-link {
   text-decoration: none;
   color: black;
 }
 
+/* Blog Preview Posts */
 .card-title {
   font-weight: 600;
 }
@@ -129,7 +112,6 @@ body {
 }
 
 /* Blog Post Page */
-
 .masthead-image {
   position: relative;
   margin-top: 1%;
@@ -211,6 +193,27 @@ body {
   background-color: #fff;
   color: #fc3030;
   border: 1px solid #fc3030;
+}
+
+/* Footer Icons */
+.f-icons {
+  color: black;
+  font-size: 1.5rem;
+}
+
+.f-icons:hover {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* Footer Line Break */
+.footer-break {
+  border-bottom: 1px solid black;
+}
+
+/* Footer Copywright Text */
+.footer-text {
+  font-size: 1rem;
+  color: black;
 }
 
 /* Timeout Messages */
