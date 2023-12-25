@@ -21,7 +21,7 @@ class Post(models.Model):
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
 
     class Meta:
-        """Set's the order of blog posts in acending order"""
+        """Set's the order of blog posts in ascending order"""
         ordering = ['-date_created']
 
     def __str__(self):
@@ -33,7 +33,7 @@ class Post(models.Model):
         return self.likes.count()
 
     def get_absolute_url(self):
-        """Returns a succesfull blog post to a related slug url"""
+        """Returns a successful blog post to a related slug URL"""
         return reverse('blog_post', kwargs={'slug': self.slug})
 
     def save(self, *args, **kwargs):
@@ -54,7 +54,7 @@ class Comment(models.Model):
     date_created = models.DateTimeField(default=timezone.now)
 
     class Meta:
-        """Set's the order of comments in acending order"""
+        """Set's the order of comments in ascending order"""
         ordering = ['date_created']
 
     def __str__(self):
