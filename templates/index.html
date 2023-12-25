@@ -11,6 +11,7 @@
                         <div class="card mb-6">
                             <div class="card-body">
                                 <div class="blog-preview">
+                                    <!-- Display placeholder image if user has not uploaded one -->
                                     {% if "placeholder" in post.image_upload.url %}
                                     <img class="card-img-top" src="https://i.imgur.com/sWaz0pA.jpg" />
                                     {% else %}
@@ -34,6 +35,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Displays block post in colums of 2 -->
                     {% if forloop.counter|divisibleby:2 %}
                 </div>
             </div>
@@ -42,6 +44,7 @@
             </div>
         </div>
     </div>
+    <!-- If blog page has more than 6 blog posts with paginate page -->
     {% if is_paginated %}
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center mt-3">
