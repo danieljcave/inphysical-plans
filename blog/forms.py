@@ -5,7 +5,7 @@ from django import forms
 
 class CommentForm(forms.ModelForm):
     """
-    Comments submition form
+    Comments submition form.
     """
     class Meta:
         model = Comment
@@ -14,7 +14,7 @@ class CommentForm(forms.ModelForm):
 
 class PostForm(forms.ModelForm):
     """
-    Comments form for posting comments
+    Comments form for posting comments.
     """
     class Meta:
         model = Post
