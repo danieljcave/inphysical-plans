@@ -18,8 +18,16 @@ class PostList(generic.ListView):
 
 
 class BlogPost(View):
+    """
+    View for displaying a blog post on a single page,
+    which includes the ability to comment and like a post.
+    """
 
     def get(self, request, slug, *args, **kwargs):
+        """
+        Get a method for retrieving blog post details which include,
+        comments, like and to rende the blog post page.
+        """
         queryset = Post.objects.all()
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.order_by('-date_created')
@@ -40,6 +48,11 @@ class BlogPost(View):
         )
 
     def post(self, request, slug, *args, **kwargs):
+        """
+        A post method to validate comment submissions, to save and re-load
+        the blog post page.
+        Add a successful comment post message for user feedback
+        """
         if request.user.is_authenticated:
             queryset = Post.objects.all()
             post = get_object_or_404(queryset, slug=slug)
@@ -58,12 +71,20 @@ class BlogPost(View):
 class CreatePost(LoginRequiredMixin,
                  SuccessMessageMixin,
                  generic.CreateView):
+    """
+    View to allow users to create a new blog post
+    Add a successfully created post message for user feedback
+    """
     model = Post
     template_name = 'create_post.html'
     form_class = PostForm
     success_message = 'Added Post'
 
     def form_valid(self, form):
+        """
+        Validate the form after connecting the
+        form author to the current user
+        """
         form.instance.author = self.request.user
         return super().form_valid(form)
 
@@ -72,16 +93,29 @@ class UpdatePost(LoginRequiredMixin,
                  SuccessMessageMixin,
                  UserPassesTestMixin,
                  generic.UpdateView):
+    """
+    View to allows users to update their blog post
+    on the blog post page
+    Add a successful updated post message for user feedback
+    """
     model = Post
     template_name = 'update_post.html'
     form_class = PostForm
     success_message = 'Updated Post'
 
     def form_valid(self, form):
+        """
+        Validate the form after connecting the
+        form author to the current user
+        """
         form.instance.author = self.request.user
         return super().form_valid(form)
 
     def test_func(self):
+        """
+        Using UserPassesTestMixin to test if the user that
+        is logged in is the blog post author
+        """
         post = self.get_object()
         if self.request.user == post.author:
             return True
@@ -92,20 +126,34 @@ class UpdateComment(LoginRequiredMixin,
                     SuccessMessageMixin,
                     UserPassesTestMixin,
                     generic.UpdateView):
+    """
+    View to allow users to update their comment
+    on the blog post page
+    Add a successfully updated comment message for user feedback
+    """
     model = Comment
     template_name = 'update_comment.html'
     form_class = CommentForm
     success_message = 'Updated Comment'
 
     def get_success_url(self):
+        """Success url for post associated with the comment"""
         slug = self.kwargs['slug']
         return reverse_lazy('blog_post', kwargs={'slug': slug})
 
     def form_valid(self, form):
+        """
+        Validate the form after connecting the form
+        author to current logged-in user
+        """
         form.instance.author = self.request.user
         return super().form_valid(form)
 
     def test_func(self):
+        """
+        Using UserPassesTestMixin to test if the user that
+        is logged in is the blog post author
+        """
         comment = self.get_object()
         if self.request.user == comment.author:
             return True
@@ -116,19 +164,30 @@ class DeleteComment(LoginRequiredMixin,
                     SuccessMessageMixin,
                     UserPassesTestMixin,
                     generic.DeleteView):
+    """
+    View to allow users to delete their comments on
+    the blog post page
+    Add a successful deleted comment message for user feedback
+    """
     model = Comment
     template_name = 'blog_post.html'
     success_message = 'Deleted Comment'
 
     def get_success_url(self):
+        """Success url for post associated with comment"""
         slug = self.kwargs['slug']
         return reverse_lazy('blog_post', kwargs={'slug': slug})
 
     def delete(self, request, *args, **kwargs):
+        """Create a success message on the delete view"""
         messages.success(self.request, self.success_message)
         return super(DeleteComment, self).delete(request, *args, **kwargs)
 
     def test_func(self):
+        """
+        Using UserPassesTestMixin to test if the user that
+        is logged in is the blog post author
+        """
         comment = self.get_object()
         if self.request.user == comment.author:
             return True
@@ -138,14 +197,24 @@ class DeleteComment(LoginRequiredMixin,
 class DeletePost(LoginRequiredMixin,
                  UserPassesTestMixin,
                  generic.DeleteView):
+    """
+    View to allow users to delete their blog posts
+    on the blog post page
+    Add a successful deleted post message for user feedback
+    """
     model = Post
     template_name = 'blog_post.html'
     success_url = reverse_lazy('home')
 
     def delete(self, request, *args, **kwargs):
+        """Create a success message on the delete view"""
         return super(DeletePost, self).delete(request, *args, **kwargs)
 
     def test_func(self):
+        """
+        Using UserPassesTestMixin to test if the user that
+        is logged in is the blog post author
+        """
         post = self.get_object()
         if self.request.user == post.author:
             return True
@@ -153,8 +222,15 @@ class DeletePost(LoginRequiredMixin,
 
 
 class LikePost(LoginRequiredMixin, View):
+    """
+    View to add or remove likes on the blog post page.
+    """
 
     def post(self, request, slug, *args, **kwargs):
+        """
+        Post method to toggle blog post likes and
+        redirects to the blog post page.
+        """
         post = get_object_or_404(Post, slug=slug)
         if post.likes.filter(id=request.user.id).exists():
             post.likes.remove(request.user)
