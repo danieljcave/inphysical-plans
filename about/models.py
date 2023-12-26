@@ -9,9 +9,9 @@ from django_countries.fields import CountryField
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     profile_image = CloudinaryField(
-        'image', default='/static/media/pfp_default.png')
-    first_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=30)
+        'image', default="https://res.cloudinary.com/dg7zlxltx/image/upload/v1703632848/pfp_default.png_l6pv4p.png")  # noqa
+    first_name = models.CharField(max_length=30, blank=True)
+    last_name = models.CharField(max_length=30, blank=True)
     bio = models.TextField()
     occupation = models.CharField(max_length=50, blank=True)
     country = CountryField(blank=True)
