@@ -5,4 +5,4 @@ from django_summernote.admin import SummernoteModelAdmin
 
 @admin.register(Profile)
 class ProfileAdmin(SummernoteModelAdmin):
-    summernote_fields = ('content')
+    search_field = ('user')
