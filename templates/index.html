@@ -29,7 +29,8 @@
                                     <hr />
                                     <p class="card-text h6">{{ post.date_created }}</p>
                                     <p class="card-text h6">
-                                        <i class="far fa-heart"></i> {{ post.total_likes }}
+                                        <i class="far fa-heart"></i> {{ post.total_likes }}  |  
+                                        <i class="far fa-comments"></i> {{ post.comments.count }}
                                     </p>
                                 </div>
                             </div>
