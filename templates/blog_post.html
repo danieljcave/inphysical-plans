@@ -27,8 +27,7 @@
                 Update this post</a>
             <!-- Button to display delete confirmation modal -->
             <button type="button" class="btn btn-del m-1" data-toggle="modal" data-target="#postModal">
-                <i class="fas fa-trash"></i> Delete this post
-            </button>
+                <i class="fas fa-trash"></i> Delete this post</button>
         </div>
     </div>
 </div>
@@ -96,10 +95,8 @@
                 {% if request.user == comment.author %}
                 <a href="{% url 'update_comment' post.slug comment.pk %}" class="btn btn-signup badge">
                     <i class="fas fa-pen"></i> Update this comment</a>
-                <button type="button" class="btn btn-del badge" data-toggle="modal"
-                    data-target="#commentModal{{ comment.pk }}">
-                    <i class="fas fa-trash"></i> Delete this comment
-                </button>
+                    <button type="button" class="btn btn-del badge" data-toggle="modal" data-target="#commentModal{{ comment.pk }}">
+                        <i class="fas fa-trash"></i> Delete this comment</button>
 
                 <!-- Delete confirmation modal for comments -->
                 <div class="modal fade" id="commentModal{{ comment.pk }}" tabindex="-1"
@@ -107,9 +104,8 @@
                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="commentModalLabel">
-                                    Are you sure you want to delete this comment?
-                                </h5>
+                                <h5 class="modal-title" id="commentModalLabel">Are you sure you want to delete this
+                                    comment?</h5>
                                 <button type="button" class="btn" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true"><i class="fas fa-xmark"></i></span>
                                 </button>
@@ -120,8 +116,7 @@
                                         {{ comment.author }}
                                         <span class="text-muted font-weight-normal">
                                             {{ comment.date_created }}
-                                        </span>
-                                        wrote:
+                                        </span> wrote:
                                     </p>
                                     {{ comment.body | linebreaks }}
                                 </div>
@@ -132,9 +127,7 @@
                                     {% csrf_token %}
                                     <button type="submit" class="btn btn-del">Delete</button>
                                 </form>
-                                <button type="button" class="btn btn-cnl" data-dismiss="modal">
-                                    Close
-                                </button>
+                                <button type="button" class="btn btn-cnl" data-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
