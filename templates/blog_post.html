@@ -25,7 +25,7 @@
             <a href="{% url 'update_post' post.slug %}" class="btn btn-signup m-1">
                 <i class="fas fa-pen"></i>
                 Update this post</a>
-                <!-- Button to display delete confirmation modal -->
+            <!-- Button to display delete confirmation modal -->
             <button type="button" class="btn btn-del m-1" data-toggle="modal" data-target="#postModal">
                 <i class="fas fa-trash"></i> Delete this post
             </button>
@@ -38,7 +38,8 @@
     <div class="row">
         <div class="col card">
             <div class="card-body">
-                <a href="{% url 'show_profile_page' post.author.profile.id %}" class="btn btn-signup m-1">{{ post.author | title }} Profile</a>
+                <a href="{% url 'show_profile_page' post.author.profile.id %}" class="btn btn-signup m-1">
+                    {{ post.author | title }}'s Profile</a>
                 <p class="card-text">{{ post.content | safe }}</p>
                 <div class="row">
                     <strong>

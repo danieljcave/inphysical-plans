@@ -8,7 +8,6 @@ class ShowProfilePageView(generic.DetailView):
     template_name = 'profile.html'
 
     def get_context_data(self, *args, **kwargs):
-        users = Profile.objects.all()
         context = super(ShowProfilePageView,
                         self).get_context_data(*args, **kwargs)
 
