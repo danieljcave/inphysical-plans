@@ -2,21 +2,78 @@
 
 {% load cloudinary %}
 
-{% load crispy_forms_tags %}
+{% load crispy_forms_tags static %}
 
 {% block content %}
 
-<div class="container">
+<div class="container text-center">
     <div class="row">
-        <div class="col-md-8">
-            {% if "placeholder" in page_user.profile_image.url %}
-            <img src="https://i.imgur.com/sWaz0pA.jpg" width="100%" />
-            {% else %}
-            <img src=" {{ page_user.profile_image.url }}" width="100%" />
-            {% endif %}
-            <h2>{{ page_user | title }}</h2>
+        <div class="col-md-8 mt-3 offset-md-2">
+            <div class="card-body">
+                <div class="profile-img">
+                    {% if "placeholder" in page_user.profile_image.url %}
+                    <img src="https://i.imgur.com/sWaz0pA.jpg" width="200" height="200" class="rounded-circle" />
+                    {% else %}
+                    <img src=" {{ page_user.profile_image.url }}" width="200" height="200" class="rounded-circle" />
+                    {% endif %}
+                </div>
+                <h1>{{ page_user | title }}</h1>
+                <div class="row">
+                    {% if page_user.first_name %}
+                    {% if page_user.last_name %}
+                    <h4>{{ page_user.first_name }} {{ page_user.last_name }}</h4>
+                    {% endif %}
+                    {% endif %}
+                    {% if page_user.country %}
+                    <span>{{ page_user.country.name }}, {{ page_user.country }}</span>
+                    {% endif %}
+                </div>
+                <div class="row">
+                    <div class="profile_icons mt-2">
+                        {% if page_user.twitter_url %}
+                        <a href="{{ page_user.twitter_url }}" target="_blank">
+                            <i class="fab fa-twitter f-icons"></i></a>
+                        {% endif %}
+                        {% if page_user.instagram_url %}
+                        <a href="{{ page_user.facebook_url }}" target="_blank">
+                            <i class="fab fa-facebook f-icons"></i></a>
+                        {% endif %}
+                        {% if page_user.instagram_url %}
+                        <a href="{{ page_user.instagram_url }}" target="_blank">
+                            <i class="fab fa-instagram f-icons"></i></a>
+                        {% endif %}
+                        {% if page_user.website_url %}
+                        <a href="{{ page_user.website_url }}" target="_blank">
+                            <i class="far fa-id-card"></i></a>
+                        {% endif %}
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <h4>{{ page_user.user }}'s' Bio:</h4>
+                    {% if page_user.bio %}
+                    <p>{{ page_user.bio | safe }}</p>
+                    {% else %}
+                    <p>{{ page_user.user | title }} has not created a bio yet.</p>
+                    {% endif %}
+
+                    <div class="col-md-6">
+                        {% if page_user.gym_focus %}
+                        <h5>Gym Goals:</h5>
+                        <p>{{ page_user.gym_focus }}</p>
+                        {% endif %}
+                    </div>
+                    <div class="col-md-6">
+                        {% if page_user.occupation %}
+                        <h5>Occupation:</h5>
+                        <p>{{ page_user.occupation }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
 
 {% endblock content %}

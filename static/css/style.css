@@ -1,227 +1,246 @@
 body {
-  background: #c0c0c0;
-  font-family: "Roboto", sans-serif;
-  font-weight: 600;
+    background: #c0c0c0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
 }
 
 /* Navbar */
 .navbar {
-  letter-spacing: 1px;
+    letter-spacing: 1px;
 }
 
 .login-text {
-  padding: 0.5rem;
+    padding: 0.5rem;
 }
 
 /* Blog Post Cards */
 .card {
-  border: none;
-  background-color: transparent;
+    border: none;
+    background-color: transparent;
 }
+
 .card-body {
-  padding: 0;
+    padding: 0;
 }
 
 /* Blog Image Container */
 .image-container {
-  position: relative;
+    position: relative;
 }
 
 /* Preview Image for blog previews */
 .blog-preview {
-  position: relative;
+    position: relative;
 }
 
 .blog-preview img {
-  max-inline-size: 100%;
-  object-fit: cover;
-  height: 300px;
+    max-inline-size: 100%;
+    object-fit: cover;
+    height: 300px;
+}
+
+/* Profile Page Image */
+.profile-img img {
+    max-inline-size: 100%;
+    object-fit: cover;
+}
+
+.profile_icons a {
+    color: black;
+    padding: 0 .5rem 0 .5rem;
+    font-size: 1.5rem;
+}
+
+.profile_icons a:hover{
+    color: rgba(0, 0, 0, 0.5);
+    transform: scale(1.1);
 }
 
 /* Media Tags for blog previews */
 @media (min-width: 576px) {
-  .blog-preview img {
-    width: 516px;
-  }
+    .blog-preview img {
+        width: 516px;
+    }
 }
 
 @media (min-width: 768px) {
-  .blog-preview img {
-    height: 225px;
-  }
+    .blog-preview img {
+        height: 225px;
+    }
 }
 
 @media (min-width: 992px) {
-  .blog-preview img {
-    height: 275px;
-  }
+    .blog-preview img {
+        height: 275px;
+    }
 }
 
 @media (min-width: 1200px) {
-  .blog-preview img {
-    height: 350px;
-    width: 546px;
-  }
+    .blog-preview img {
+        height: 350px;
+        width: 546px;
+    }
 }
 
 @media (min-width: 1200px) {
-  .blog-preview img {
-    width: 636px;
-  }
+    .blog-preview img {
+        width: 636px;
+    }
 }
 
 /* Blog Preview Author Preview */
 .blog-author {
-  position: absolute;
-  bottom: 5%;
-  min-width: 30%;
-  background-color: #8b0000;
-  border: 1px solid white;
-  border-left: 0;
+    position: absolute;
+    bottom: 5%;
+    min-width: 30%;
+    background-color: #8b0000;
+    border: 1px solid white;
+    border-left: 0;
 }
 
 /* Blog Preview Author Text */
 .author-text {
-  color: white;
-  margin: 4px;
-  text-transform: capitalize;
+    color: white;
+    margin: 4px;
+    text-transform: capitalize;
 }
 
 /* Blog Post Link */
 .blog-post-link {
-  text-decoration: none;
-  color: black;
+    text-decoration: none;
+    color: black;
 }
 
 /* Blog Preview Posts */
 .card-title {
-  font-weight: 600;
+    font-weight: 600;
 }
 
 .blog-post-link:hover,
 .page-link {
-  color: #8b0000;
+    color: #8b0000;
 }
 
 .card-border {
-  border: 1px solid;
-  border-top: 0;
-  padding: 2%;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+    border: 1px solid;
+    border-top: 0;
+    padding: 2%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 /* Blog Post Page */
 .masthead-image {
-  position: relative;
-  margin-top: 1%;
+    position: relative;
+    margin-top: 1%;
 }
 
 .masthead-image img {
-  max-inline-size: 100%;
-  object-fit: cover;
-  max-height: 500px;
+    max-inline-size: 100%;
+    object-fit: cover;
+    max-height: 500px;
 }
 
 .masthead-text {
-  position: absolute;
-  text-align: center;
-  top: calc(50% - 40px);
-  left: 0;
-  width: 100%;
-  color: black;
+    position: absolute;
+    text-align: center;
+    top: calc(50% - 40px);
+    left: 0;
+    width: 100%;
+    color: black;
 }
 
 /* Buttons */
 .btn-signup {
-  background-color: #003cff;
-  color: #fff;
+    background-color: #003cff;
+    color: #fff;
 }
 
 .btn-signup:hover,
 .btn-signup:active {
-  background-color: #fff;
-  color: #003cff;
+    background-color: #fff;
+    color: #003cff;
 }
 
 .link {
-  color: #23bbbb;
-  text-decoration: none;
+    color: #23bbbb;
+    text-decoration: none;
 }
 
 .link:hover,
 .link:active {
-  color: #003cff;
-  text-decoration: underline;
+    color: #003cff;
+    text-decoration: underline;
 }
 
 /* Like Button */
 .btn-like {
-  color: #003cff;
-  border: none;
-  background: transparent;
+    color: #003cff;
+    border: none;
+    background: transparent;
 }
 
 .btn-like:hover,
 .btn-like:active {
-  color: #003cff;
-  background: transparent;
-  border: none;
+    color: #003cff;
+    background: transparent;
+    border: none;
 }
 
 /* Cancel Button */
 .btn-cnl {
-  background-color: #363b3d;
-  color: #fff;
+    background-color: #363b3d;
+    color: #fff;
 }
 
 .btn-cnl:hover,
 .btn-cnl:active {
-  background-color: #fd7272;
-  color: #000;
-  border: 1px solid #fd7272;
+    background-color: #fd7272;
+    color: #000;
+    border: 1px solid #fd7272;
 }
 
 /* Delete Button */
 .btn-del {
-  background-color: #fc3030;
-  color: #000;
+    background-color: #fc3030;
+    color: #000;
 }
 
 .btn-del:hover,
 .btn-del:active {
-  background-color: #fff;
-  color: #fc3030;
-  border: 1px solid #fc3030;
+    background-color: #fff;
+    color: #fc3030;
+    border: 1px solid #fc3030;
 }
 
 /* Footer Icons */
 .f-icons {
-  color: black;
-  font-size: 1.5rem;
+    color: black;
+    font-size: 1.5rem;
 }
 
 .f-icons:hover {
-  color: rgba(0, 0, 0, 0.5);
+    color: rgba(0, 0, 0, 0.5);
+    transform: scale(1.1);
 }
 
 /* Footer Line Break */
 .footer-break {
-  border-bottom: 1px solid black;
+    border-bottom: 1px solid black;
 }
 
 /* Footer Copywright Text */
 .footer-text {
-  font-size: 1rem;
-  color: black;
+    font-size: 1rem;
+    color: black;
 }
 
 /* Timeout Messages */
 #msg {
-  font-size: 1rem;
-  text-align: center;
-  color: #000;
-  background-color: #e2e3e5;
-  border: 3px double #000;
-  animation: openclose 5s ease-in-out infinite;
+    font-size: 1rem;
+    text-align: center;
+    color: #000;
+    background-color: #e2e3e5;
+    border: 3px double #000;
+    animation: openclose 5s ease-in-out infinite;
 }

@@ -22,7 +22,7 @@ class Profile(models.Model):
     website_url = models.CharField(max_length=255, null=True, blank=True)
 
     def __str__(self):
-        return f'{self.user.username} Profile'
+        return f"{self.user.username}'s Profile"
 
 
 @receiver(post_save, sender=User)
