@@ -73,14 +73,43 @@
                     </div>
                 </div>
             {% if request.user.id == profile.user.id %}
-                <div class="row">
+                <div class="align-items-center">
                     <hr/>
-                    <div class="col-xl-4">
                     <a href="{% url 'edit_profile_page' user.profile.id %}" class="btn btn-signup m-1">
                         <i class="fas fa-pen"></i> Update Profile</a>
-                    </div>
+                    <button type="button" class="btn btn-del m-1" data-toggle="modal" data-target="#deleteUser">
+                            <i class="fas fa-trash"></i> Delete Profile</button>
                 </div>
                 {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Delete User Modal -->
+<div class="modal fade" id="deleteUser" tabindex="-1" aria-labelledby="deleteUserLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteUserLabel">
+                    Are you sure you want to delete your profile?
+                </h5>
+                <button type="button" class="btn" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Deleting your profile will delete your account and all of your blog posts.</p>
+                <p>If you delete your account, You will not be able to Create posts, leave comments or like posts.</p> 
+            </div>
+            <div class="modal-footer">
+                <form action="{% url 'delete_profile' user.profile.id %}" method="post" class="d-inline">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-del">Delete</button>
+                </form>
+                <button type="button" class="btn btn-cnl" data-dismiss="modal">
+                    Cancel
+                </button>
             </div>
         </div>
     </div>

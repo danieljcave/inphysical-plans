@@ -4,6 +4,7 @@ from .models import Profile
 from blog.models import Post
 from .forms import ProfileForm
 from django.urls import reverse_lazy
+from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
 
@@ -37,6 +38,30 @@ class EditProfile(LoginRequiredMixin,
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)
+
+    def test_func(self):
+        profile = self.get_object()
+        if self.request.user == profile.user:
+            return True
+        return False
+
+
+class DeleteProfile(LoginRequiredMixin,
+                    SuccessMessageMixin,
+                    UserPassesTestMixin,
+                    generic.DeleteView):
+    model = Profile
+    template_name = 'profile.html'
+    success_message = 'Account Deleted'
+
+    def get_success_url(self):
+        """Success url for account deleted"""
+        return reverse_lazy('home')
+
+    def delete(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        self.object.user.delete()
+        return HttpResponseRedirect(reverse('home'))
 
     def test_func(self):
         profile = self.get_object()
