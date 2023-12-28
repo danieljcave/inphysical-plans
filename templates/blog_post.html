@@ -26,7 +26,7 @@
                 <i class="fas fa-pen"></i>
                 Update this post</a>
             <!-- Button to display delete confirmation modal -->
-            <button type="button" class="btn btn-del m-1" data-toggle="modal" data-target="#postModal">
+            <button type="button" class="btn btn-del m-1" data-bs-toggle="modal" data-bs-target="#postModal">
                 <i class="fas fa-trash"></i> Delete this post</button>
         </div>
     </div>
@@ -95,7 +95,7 @@
                 {% if request.user == comment.author %}
                 <a href="{% url 'update_comment' post.slug comment.pk %}" class="btn btn-signup badge">
                     <i class="fas fa-pen"></i> Update this comment</a>
-                    <button type="button" class="btn btn-del badge" data-toggle="modal" data-target="#commentModal{{ comment.pk }}">
+                    <button type="button" class="btn btn-del badge" data-bs-toggle="modal" data-bs-target="#commentModal{{ comment.pk }}">
                         <i class="fas fa-trash"></i> Delete this comment</button>
 
                 <!-- Delete confirmation modal for comments -->
@@ -106,7 +106,7 @@
                             <div class="modal-header">
                                 <h5 class="modal-title" id="commentModalLabel">Are you sure you want to delete this
                                     comment?</h5>
-                                <button type="button" class="btn" data-dismiss="modal" aria-label="Close">
+                                <button type="button" class="btn" data-bs-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true"><i class="fas fa-xmark"></i></span>
                                 </button>
                             </div>
@@ -127,7 +127,7 @@
                                     {% csrf_token %}
                                     <button type="submit" class="btn btn-del">Delete</button>
                                 </form>
-                                <button type="button" class="btn btn-cnl" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-cnl" data-bs-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
@@ -174,7 +174,7 @@
                 <h5 class="modal-title" id="postModalLabel">
                     Are you sure you want to delete this post?
                 </h5>
-                <button type="button" class="btn" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="btn" data-bs-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -187,7 +187,7 @@
                     {% csrf_token %}
                     <button type="submit" class="btn btn-del">Delete</button>
                 </form>
-                <button type="button" class="btn btn-cnl" data-dismiss="modal">
+                <button type="button" class="btn btn-cnl" data-bs-dismiss="modal">
                     Close
                 </button>
             </div>
