@@ -195,6 +195,7 @@ class DeleteComment(LoginRequiredMixin,
 
 
 class DeletePost(LoginRequiredMixin,
+                SuccessMessageMixin,
                  UserPassesTestMixin,
                  generic.DeleteView):
     """
@@ -204,7 +205,11 @@ class DeletePost(LoginRequiredMixin,
     """
     model = Post
     template_name = 'blog_post.html'
-    success_url = reverse_lazy('home')
+    success_message = 'Deleted Post'
+
+    def get_success_url(self):
+        """Success url for post deleted"""
+        return reverse_lazy('home')
 
     def delete(self, request, *args, **kwargs):
         """Create a success message on the delete view"""
