@@ -11,13 +11,13 @@ from django.contrib.messages.views import SuccessMessageMixin
 
 class ShowProfilePageView(generic.DetailView, View):
     model = Profile
-    template_name = 'profile.html'
+    template_name = "profile.html"
 
     def get_context_data(self, *args, **kwargs):
         context = super(ShowProfilePageView,
                         self).get_context_data(*args, **kwargs)
 
-        page_user = get_object_or_404(Profile, id=self.kwargs['pk'])
+        page_user = get_object_or_404(Profile, id=self.kwargs["pk"])
 
         context["page_user"] = page_user
         return context
@@ -28,12 +28,12 @@ class EditProfile(LoginRequiredMixin,
                   UserPassesTestMixin,
                   generic.UpdateView):
     model = Profile
-    template_name = 'edit_profile_page.html'
+    template_name = "edit_profile_page.html"
     form_class = ProfileForm
-    success_message = 'Updated Profile'
+    success_message = "Updated Profile"
 
     def get_success_url(self):
-        return reverse_lazy('show_profile_page', kwargs={'pk': self.object.pk})
+        return reverse_lazy("show_profile_page", kwargs={"pk": self.object.pk})
 
     def form_valid(self, form):
         form.instance.user = self.request.user
@@ -51,17 +51,17 @@ class DeleteProfile(LoginRequiredMixin,
                     UserPassesTestMixin,
                     generic.DeleteView):
     model = Profile
-    template_name = 'profile.html'
-    success_message = 'Account Deleted'
+    template_name = "profile.html"
+    success_message = "Account Deleted"
 
     def get_success_url(self):
         """Success url for account deleted"""
-        return reverse_lazy('home')
+        return reverse_lazy("home")
 
     def delete(self, request, *args, **kwargs):
         self.object = self.get_object()
         self.object.user.delete()
-        return HttpResponseRedirect(reverse('home'))
+        return HttpResponseRedirect(reverse("home"))
 
     def test_func(self):
         profile = self.get_object()

@@ -72,13 +72,13 @@
                         {% endif %}
                     </div>
                 </div>
-            {% if request.user.id == profile.user.id %}
+                {% if request.user.id == profile.user.id %}
                 <div class="align-items-center">
-                    <hr/>
+                    <hr />
                     <a href="{% url 'edit_profile_page' user.profile.id %}" class="btn btn-signup m-1">
                         <i class="fas fa-pen"></i> Update Profile</a>
                     <button type="button" class="btn btn-del m-1" data-toggle="modal" data-target="#deleteUser">
-                            <i class="fas fa-trash"></i> Delete Profile</button>
+                        <i class="fas fa-trash"></i> Delete Profile</button>
                 </div>
                 {% endif %}
             </div>
@@ -86,7 +86,70 @@
     </div>
 </div>
 
+
+<div class="container">
+    <div class="row">
+        <!-- Blog Post Column list -->
+        <div class="col-12 left">
+            <div class="container">
+                <div class="row">
+                    {% for post in post_list %}
+                    <div class="col-md-6 mt-3">
+                        <div class="card mb-6">
+                            <div class="card-body">
+                                <div class="blog-preview">
+                                    <!-- Display placeholder image if user has not uploaded one -->
+                                    {% if "placeholder" in post.image_upload.url %}
+                                    <img class="card-img-top" src="https://i.imgur.com/sWaz0pA.jpg" />
+                                    {% else %}
+                                    <img class="card-img-top" src="{{ post.image_upload.url }}" />
+                                    {% endif %}
+                                    <div class="blog-author">
+                                        <p class="author-text">Author: {{ post.author }}</p>
+                                    </div>
+                                </div>
+                                <div class="card-border">
+                                    <a href="{% url 'blog_post' post.slug %}" class="blog-post-link">
+                                        <h3 class="card-title">{{ post.title | truncatechars:75 }}</h3>
+                                        <p class="card-text">{{ post.content | truncatechars:50 | safe }}</p>
+                                    </a>
+                                    <hr />
+                                    <p class="card-text h6">{{ post.date_created }}</p>
+                                    <p class="card-text h6">
+                                        <i class="far fa-heart"></i> {{ post.total_likes }} |
+                                        <i class="far fa-comments"></i> {{ post.comments.count }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Displays block post in colums of 2 -->
+                    {% if forloop.counter|divisibleby:3 %}
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">{% endif %} {% endfor %}</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% if request.user.id == profile.user.id %}
+<div class="container text-center">
+    <div class="row">
+        <div class="col-md-8 mt-3 offset-md-2">
+            <hr>
+            <div class="align-items-center">
+                <a href="{% url 'add_post' %}" class="btn btn-signup m-1">
+                    <i class="fas fa-pen"></i> Create Your First Post</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
 <!-- Delete User Modal -->
+{% if request.user.id == profile.user.id %}
 <div class="modal fade" id="deleteUser" tabindex="-1" aria-labelledby="deleteUserLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
@@ -100,7 +163,7 @@
             </div>
             <div class="modal-body">
                 <p>Deleting your profile will delete your account and all of your blog posts.</p>
-                <p>If you delete your account, You will not be able to Create posts, leave comments or like posts.</p> 
+                <p>If you delete your account, You will not be able to Create posts, leave comments or like posts.</p>
             </div>
             <div class="modal-footer">
                 <form action="{% url 'delete_profile' user.profile.id %}" method="post" class="d-inline">
@@ -114,6 +177,6 @@
         </div>
     </div>
 </div>
-
+{% endif %}
 
 {% endblock content %}
