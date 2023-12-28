@@ -32,7 +32,7 @@ class EditProfile(LoginRequiredMixin,
     success_message = 'Updated Profile'
 
     def get_success_url(self):
-        return reverse_lazy('show_profile_page')
+        return reverse_lazy('show_profile_page', kwargs={'pk': self.object.pk})
 
     def form_valid(self, form):
         form.instance.user = self.request.user
