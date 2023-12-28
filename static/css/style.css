@@ -244,3 +244,8 @@ body {
     border: 3px double #000;
     animation: openclose 5s ease-in-out infinite;
 }
+
+/* Disable Help Texts */
+.helptext {
+    display: none;
+}
