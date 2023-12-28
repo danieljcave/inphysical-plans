@@ -114,7 +114,7 @@ class UpdatePost(LoginRequiredMixin,
     def test_func(self):
         """
         Using UserPassesTestMixin to test if the user that
-        is logged in is the blog post author
+        is logged in and is the blog post author
         """
         post = self.get_object()
         if self.request.user == post.author:
