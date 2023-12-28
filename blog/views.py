@@ -195,7 +195,7 @@ class DeleteComment(LoginRequiredMixin,
 
 
 class DeletePost(LoginRequiredMixin,
-                SuccessMessageMixin,
+                 SuccessMessageMixin,
                  UserPassesTestMixin,
                  generic.DeleteView):
     """
