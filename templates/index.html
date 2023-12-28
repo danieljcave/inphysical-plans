@@ -1,13 +1,13 @@
 {% extends "base.html" %} {% block content %}
 
 <div class="container-fluid">
-    <div class="row">
-        <!-- Blog Post Column list -->
-        <div class="col-12 left">
-            <div class="container">
+    <div class="container">
+        <div class="row">
+            <!-- Blog Post Column list -->
+            <div class="col-12 left">
                 <div class="row">
                     {% for post in post_list %}
-                    <div class="col-md-6 mt-3">
+                    <div class="col-md-4 mt-2 mb-2">
                         <div class="card mb-6">
                             <div class="card-body">
                                 <div class="blog-preview">
@@ -23,13 +23,12 @@
                                 </div>
                                 <div class="card-border">
                                     <a href="{% url 'blog_post' post.slug %}" class="blog-post-link">
-                                        <h3 class="card-title">{{ post.title | truncatechars:75 }}</h3>
-                                        <p class="card-text">{{ post.content | truncatechars:50 | safe }}</p>
+                                        <h3 class="card-title text-capitalize">{{ post.title | truncatechars:30 }}</h3>
                                     </a>
                                     <hr />
                                     <p class="card-text h6">{{ post.date_created }}</p>
                                     <p class="card-text h6">
-                                        <i class="far fa-heart"></i> {{ post.total_likes }}  |  
+                                        <i class="far fa-heart"></i> {{ post.total_likes }} |
                                         <i class="far fa-comments"></i> {{ post.comments.count }}
                                     </p>
                                 </div>
@@ -37,30 +36,30 @@
                         </div>
                     </div>
                     <!-- Displays block post in colums of 2 -->
-                    {% if forloop.counter|divisibleby:2 %}
+                    {% if forloop.counter|divisibleby:3 %}
                 </div>
-            </div>
-            <div class="container">
+
                 <div class="row">{% endif %} {% endfor %}</div>
             </div>
         </div>
+
+        <!-- If blog page has more than 6 blog posts with paginate page -->
+        {% if is_paginated %}
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center mt-3">
+                {% if page_obj.has_previous %}
+                <li>
+                    <a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV</a>
+                </li>
+                {% endif %} {% if page_obj.has_next %}
+                <li>
+                    <a href="?page={{ page_obj.next_page_number }}" class="page-link">NEXT &raquo;</a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+        {% endif %}
     </div>
-    <!-- If blog page has more than 6 blog posts with paginate page -->
-    {% if is_paginated %}
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center mt-3">
-            {% if page_obj.has_previous %}
-            <li>
-                <a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV</a>
-            </li>
-            {% endif %} {% if page_obj.has_next %}
-            <li>
-                <a href="?page={{ page_obj.next_page_number }}" class="page-link">NEXT &raquo;</a>
-            </li>
-            {% endif %}
-        </ul>
-    </nav>
-    {% endif %}
 </div>
 
 {% endblock content %}
