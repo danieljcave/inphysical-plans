@@ -104,14 +104,14 @@
     </div>
 </div>
 
-<main class="flex-shrink-0">
+<main class="flex-shrink-0 m-2">
     {% block content %}
     <!-- Blog posts content -->
     {% endblock content %}
 </main>
 
 <!-- Footer -->
-<footer class="footer py-1 mt-3 bg-secondary-subtle">
+<footer class="footer mt-auto py-1 bg-secondary-subtle">
     <div class="container">
         <ul class="nav justify-content-center mb-3 footer-break">
             <li class="nav-item">
@@ -139,8 +139,8 @@
     </div>
     </div>
 
+    </footer>
 </html>
-</footer>
 
 <!-- Display copywright current year -->
 <script>document.getElementById("current-year").innerHTML = (new Date().getFullYear());</script>
