@@ -1,17 +1,22 @@
 {% extends 'base.html' %} {% block content %} {% load crispy_forms_tags %}
 
-<div class="container">
-    <div class="row">
-        <div class="masthead-image">
-            <!-- Display placeholder image if user has not uploaded one -->
-            {% if "placeholder" in post.image_upload.url %}
-            <img src="https://i.imgur.com/sWaz0pA.jpg" width="100%" />
-            {% else %}
-            <img src=" {{ post.image_upload.url }}" width="100%" />
-            {% endif %}
-            <div class="masthead-text">
+<div class="masthead">
+    <div class="container">
+        <div class="row g-0">
+            <div class="col-md-6 masthead-text">
                 <h1 class="blog-title">{{ post.title }}</h1>
                 <p class="blog-subtitle">{{ post.author }} | {{ post.date_created }}</p>
+                <p class="blog-subtitle"><a href="{% url 'show_profile_page' post.author.profile.id %}">
+                    <i class="fas fa-user"></i> About Me</a>
+                </p>
+            </div>
+            <div class="d-none d-md-block col-md-6 masthead-image">
+                <!-- Display placeholder image if user has not uploaded one -->
+                {% if "placeholder" in post.image_upload.url %}
+                <img src="https://i.imgur.com/sWaz0pA.jpg" width="100%" />
+                {% else %}
+                <img src=" {{ post.image_upload.url }}" width="100%" />
+                {% endif %}
             </div>
         </div>
     </div>
@@ -37,8 +42,6 @@
     <div class="row">
         <div class="col card">
             <div class="card-body">
-                <a href="{% url 'show_profile_page' post.author.profile.id %}" class="btn btn-signup m-1">
-                    {{ post.author | title }}'s Profile</a>
                 <p class="card-text">{{ post.content | safe }}</p>
                 <div class="row">
                     <strong>
@@ -95,8 +98,9 @@
                 {% if request.user == comment.author %}
                 <a href="{% url 'update_comment' post.slug comment.pk %}" class="btn btn-signup badge">
                     <i class="fas fa-pen"></i> Update this comment</a>
-                    <button type="button" class="btn btn-del badge" data-bs-toggle="modal" data-bs-target="#commentModal{{ comment.pk }}">
-                        <i class="fas fa-trash"></i> Delete this comment</button>
+                <button type="button" class="btn btn-del badge" data-bs-toggle="modal"
+                    data-bs-target="#commentModal{{ comment.pk }}">
+                    <i class="fas fa-trash"></i> Delete this comment</button>
 
                 <!-- Delete confirmation modal for comments -->
                 <div class="modal fade" id="commentModal{{ comment.pk }}" tabindex="-1"
@@ -149,8 +153,7 @@
                 <p>Posting as: {{ user.username }}</p>
                 <form method="post">
                     {{ comment_form | crispy }} {% csrf_token %}
-                    <br />
-                    <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                    <button type="submit" class="btn btn-signup mt-2 mb-2 btn-lg">Submit</button>
                 </form>
                 {% else %}
                 <p>
