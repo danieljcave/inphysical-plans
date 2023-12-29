@@ -9,9 +9,9 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="https://i.imgur.com/rWrLGg1.png">
 
@@ -24,10 +24,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
     <!-- CSS Link -->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+    <!-- JS Link -->
+    <script src="{% static 'js/script.js' %}"></script>
 
     <title>InPhysical Plans</title>
 </head>
@@ -37,17 +41,20 @@
     <nav class="navbar navbar-expand-lg bg-secondary-subtle">
         <div class="container">
             <a class="navbar-brand" href="{% url 'home' %}">
-                <img src="https://i.imgur.com/rWrLGg1.png" alt="Logo" width="32" height="26" class="d-inline-block align-text-middle">
+                <img src="https://i.imgur.com/rWrLGg1.png" alt="Logo" width="32" height="26"
+                    class="d-inline-block align-text-middle">
                 InPhysical Plans
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <!-- Set active class if user is on home page using request.path -->
-                        <a class="nav-link {% if '/' == request.path %} active {% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
+                        <a class="nav-link {% if '/' == request.path %} active {% endif %}" aria-current="page"
+                            href="{% url 'home' %}">Home</a>
                     </li>
                     <!-- Checks if user is logged in, if so will be able to view the following Nav items -->
                     {% if user.is_authenticated %}
@@ -83,71 +90,63 @@
             </div>
         </div>
     </nav>
-</body>
 
-<!-- Flash message for all messages -->
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 offset-md-2">
-            {% for message in messages %}
-            <div class="alert {{ message.tags }} alert-dismissible fade show m-2" id="msg" role="alert">
-                {{ message | safe }}
-                <button type="submit" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    <!-- Flash message for all messages -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                {% for message in messages %}
+                <div class="alert {{ message.tags }} alert-dismissible fade show m-2" id="msg" role="alert">
+                    {{ message | safe }}
+                    <button type="submit" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
             </div>
-            {% endfor %}
         </div>
     </div>
-</div>
 
-<main class="flex-shrink-0">
-    {% block content %}
-    <!-- Blog posts content -->
-    {% endblock content %}
-</main>
+    <main class="flex-shrink-0">
+        {% block content %}
+        <!-- Blog posts content -->
+        {% endblock content %}
+    </main>
 
-<!-- Footer -->
-<footer class="footer mt-auto py-1 bg-secondary-subtle">
-    <div class="container">
-        <ul class="nav justify-content-center mb-3 footer-break">
-            <li class="nav-item">
-                <a href="https://twitter.com/home/" target="_blank" class="nav-link">
-                    <i class="fab fa-twitter f-icons"></i>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="https://www.facebook.com/" target="_blank" class="nav-link">
-                    <i class="fab fa-facebook f-icons"></i>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="https://www.instagram.com/" target="_blank" class="nav-link">
-                    <i class="fab fa-instagram f-icons"></i>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="https://www.linkedin.com/in/daniel-cave/" target="_blank" class="nav-link">
-                    <i class="fab fa-linkedin f-icons"></i>
-                </a>
-            </li>
-        </ul>
-        <div class="footer-text text-center">Copywright &copy; <span id="current-year"></span> - Daniel Cave</div>
-    </div>
-    </div>
+    <!-- Footer -->
+    <footer class="footer mt-auto py-1 bg-secondary-subtle">
+        <div class="container">
+            <ul class="nav justify-content-center mb-3 footer-break">
+                <li class="nav-item">
+                    <a href="https://twitter.com/home/" target="_blank" class="nav-link">
+                        <i class="fab fa-twitter f-icons"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://www.facebook.com/" target="_blank" class="nav-link">
+                        <i class="fab fa-facebook f-icons"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://www.instagram.com/" target="_blank" class="nav-link">
+                        <i class="fab fa-instagram f-icons"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://www.linkedin.com/in/daniel-cave/" target="_blank" class="nav-link">
+                        <i class="fab fa-linkedin f-icons"></i>
+                    </a>
+                </li>
+            </ul>
+            <div class="footer-text text-center">Copywright &copy; 2023 - Daniel Cave</div>
+        </div>
 
-</footer>
-
-</html>
-
-<!-- Display copyright current year -->
-<script>
-    document.getElementById("current-year").innerHTML = (new Date().getFullYear());
-</script>
-
-<!-- JS Link -->
-<script src="{% static 'js/script.js' %}"></script>
-
-<!-- Bootstrap Scripts -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </footer>
+    <!-- Bootstrap Scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
 
 </html>

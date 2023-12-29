@@ -16,10 +16,10 @@
                                     all images have set width and height with object fit for aspect ratio
                                     and defencive design -->
                                     {% if "placeholder" in post.image_upload.url %}
-                                    <img class="card-img-top" src="https://i.imgur.com/sWaz0pA.jpg" />
+                                    <img class="card-img-top" src="https://i.imgur.com/sWaz0pA.jpg" alt="Placeholder image">
                                     {% else %}
                                     <!-- Display users uploaded image -->
-                                    <img class="card-img-top" src="{{ post.image_upload.url }}" />
+                                    <img class="card-img-top" src="{{ post.image_upload.url }}" alt="User uploaded image">
                                     {% endif %}
                                     <div class="blog-author">
                                         <p class="author-text">Author: {{ post.author }}</p>
@@ -31,7 +31,7 @@
                                     <a href="{% url 'blog_post' post.slug %}" class="blog-post-link">
                                         <h3 class="card-title text-capitalize">{{ post.title | truncatechars:30 }}</h3>
                                     </a>
-                                    <hr />
+                                    <hr>
                                     <p class="card-text h6">{{ post.date_created }}</p>
                                     <p class="card-text h6">
                                         <!-- Display total like and comments on posts -->
