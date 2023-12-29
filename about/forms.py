@@ -24,6 +24,5 @@ class ProfileForm(forms.ModelForm):
             'website_url',
         ]
         widgets = {
-            'bio': SummernoteWidget(),
             'country': CountrySelectWidget(),
         }
