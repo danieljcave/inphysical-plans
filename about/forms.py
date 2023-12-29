@@ -1,5 +1,4 @@
 from .models import Profile
-from django_countries.widgets import CountrySelectWidget
 from django import forms
 
 
@@ -22,4 +21,3 @@ class ProfileForm(forms.ModelForm):
             'instagram_url',
             'website_url',
         ]
-

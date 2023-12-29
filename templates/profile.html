@@ -17,10 +17,10 @@
                     <!-- Display placeholder image if user has not uploaded a photo,
                     sets height and width for defencive design -->
                     {% if "placeholder" in page_user.profile_image.url %}
-                    <img src="https://i.imgur.com/sWaz0pA.jpg" width="200" height="200" class="rounded-circle" />
+                    <img src="https://i.imgur.com/sWaz0pA.jpg" width="200" height="200" class="rounded-circle" alt="placeholder image">
                     {% else %}
                     <!-- Displays users uploaded profile image -->
-                    <img src=" {{ page_user.profile_image.url }}" width="200" height="200" class="rounded-circle" />
+                    <img src=" {{ page_user.profile_image.url }}" width="200" height="200" class="rounded-circle" alt="uploaded profile image">
                     {% endif %}
                 </div>
                 <!-- Profile users name in h1 tags -->
@@ -61,7 +61,7 @@
                         {% endif %}
                     </div>
                 </div>
-                <hr />
+                <hr>
                 <!-- Displays users bio -->
                 <div class="row">
                     <h4>{{ page_user.user }}'s' Bio:</h4>
@@ -91,7 +91,7 @@
                 <!-- If users logged in is the users profile they are able to view the update and delete profile buttons -->
                 {% if request.user.id == profile.user.id %}
                 <div class="align-items-center">
-                    <hr />
+                    <hr >
                     <a href="{% url 'edit_profile_page' user.profile.id %}" class="btn btn-signup m-1">
                         <i class="fas fa-pen"></i> Update Profile</a>
                     <button type="button" class="btn btn-del m-1" data-bs-toggle="modal" data-bs-target="#deleteUser">

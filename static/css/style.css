@@ -28,11 +28,17 @@ body {
 }
 
 .card-body {
-    padding: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+.card-text {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .card-text p {
     margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 /* Heart icon preview */
@@ -205,6 +211,11 @@ body {
 
 .blog-subtitle a {
     text-decoration: none;
+    color: white;
+}
+
+.blog-subtitle a:hover {
+    color: #fc3030;
 }
 /* Media query for Masthead blog title and subtitles */
 @media (min-width: 768px) {
