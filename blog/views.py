@@ -10,7 +10,9 @@ from django.contrib.messages.views import SuccessMessageMixin
 
 
 class PostList(generic.ListView):
-    """Display list for blog preview paginated by 6"""
+    """
+    Display list for blog preview paginated by 6
+    """
     model = Post
     queryset = Post.objects.all().order_by("-date_created")
     template_name = "index.html"
@@ -114,7 +116,7 @@ class UpdatePost(LoginRequiredMixin,
     def test_func(self):
         """
         Using UserPassesTestMixin to test if the user that
-        is logged in and is the blog post author
+        is logged in, is the blog post author
         """
         post = self.get_object()
         if self.request.user == post.author:
@@ -152,7 +154,7 @@ class UpdateComment(LoginRequiredMixin,
     def test_func(self):
         """
         Using UserPassesTestMixin to test if the user that
-        is logged in is the blog post author
+        is logged in, is the blog post author
         """
         comment = self.get_object()
         if self.request.user == comment.author:
@@ -186,7 +188,7 @@ class DeleteComment(LoginRequiredMixin,
     def test_func(self):
         """
         Using UserPassesTestMixin to test if the user that
-        is logged in is the blog post author
+        is logged in, is the blog post author
         """
         comment = self.get_object()
         if self.request.user == comment.author:
@@ -218,7 +220,7 @@ class DeletePost(LoginRequiredMixin,
     def test_func(self):
         """
         Using UserPassesTestMixin to test if the user that
-        is logged in is the blog post author
+        is logged in, is the blog post author
         """
         post = self.get_object()
         if self.request.user == post.author:

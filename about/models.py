@@ -7,6 +7,9 @@ from django_countries.fields import CountryField
 
 
 class Profile(models.Model):
+    """
+    Database model for user profiles
+    """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     profile_image = CloudinaryField(
         'image', default="https://res.cloudinary.com/dg7zlxltx/image/upload/v1703632848/pfp_default.png_l6pv4p.png")  # noqa
@@ -24,11 +27,15 @@ class Profile(models.Model):
     def __str__(self):
         return f"{self.user.username}'s Profile"
 
+# Signal receiver to create a users profile when a user create a new account
+
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
         Profile.objects.create(user=instance)
+
+# Signal reveiver to save a users profile when a new account is created
 
 
 @receiver(post_save, sender=User)

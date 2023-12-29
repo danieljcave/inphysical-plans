@@ -5,6 +5,9 @@ from django import forms
 
 
 class ProfileForm(forms.ModelForm):
+    """
+    Profile Update Form
+    """
     class Meta:
         model = Profile
         fields = [
