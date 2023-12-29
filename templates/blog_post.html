@@ -17,10 +17,10 @@
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <!-- Display placeholder image if user has not uploaded one -->
                 {% if "placeholder" in post.image_upload.url %}
-                <img src="https://i.imgur.com/sWaz0pA.jpg" width="100%" />
+                <img src="https://i.imgur.com/sWaz0pA.jpg" alt="Placeholder image">
                 {% else %}
                 <!-- Display users uploaded image -->
-                <img src=" {{ post.image_upload.url }}" width="100%" />
+                <img src=" {{ post.image_upload.url }}" alt="User image upload">
                 {% endif %}
             </div>
         </div>
@@ -49,12 +49,11 @@
     <div class="row">
         <div class="col card">
             <div class="card-body">
-                <p class="card-text">{{ post.content | safe }}</p>
-                <div class="row">
-                    <strong>
+                <div class="card-text">{{ post.content | safe }}</div>
+                <div class="row d-inline">
                         <!-- Shows like button and toggle like or unlike post -->
                         {% if user.is_authenticated %}
-                        <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
+                        <form class="d-inline heart-preview" action="{% url 'post_like' post.slug %}" method="POST">
                             {% csrf_token %} {% if liked %}
                             <!-- If post is liked post will display a filled in heart -->
                             <button type="submit" name="blogpost_id" value="{{ post.slug }}" class="btn-like">
@@ -74,21 +73,20 @@
                         </span>
                         {% endif %}
                         <!-- Display total likes next to heart icon -->
-                        <span class="text-secondary">{{ post.total_likes }} </span>
+                        <span class="text-secondary preview-text">{{ post.total_likes }} </span>
                         {% with comments.count as total_comments %}
                         <strong class="text-secondary cmts">
                             <!-- Display total Comments next to comment icon -->
                             <i class="far fa-comments" style="padding-left: 0.5rem"></i>
                             {{ total_comments }}</strong>
                         {% endwith %}
-                    </strong>
                 </div>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col">
-            <hr />
+            <hr>
         </div>
     </div>
     <!-- Display Comments under blog post -->
@@ -152,7 +150,7 @@
                     </div>
                 </div>
                 {% endif %}
-                <hr />
+                <hr >
                 <!-- Displays if no comments are on post -->
                 {% endfor %} {% if not comments %}
                 <p class="text-secondary">No comments on this post.</p>

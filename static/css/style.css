@@ -31,6 +31,18 @@ body {
     padding: 0;
 }
 
+.card-text p {
+    margin-top: 1rem;
+}
+
+/* Heart icon preview */
+.heart-preview {
+    padding-right: 0;
+}
+.preview-text{
+    padding: 0;
+}
+
 /* Blog Image Container */
 .image-container {
     position: relative;
@@ -161,6 +173,7 @@ body {
     max-inline-size: 100%;
     object-fit: cover;
     height: 300px;
+    width: 100%;
 }
 
 .masthead-image:after {
