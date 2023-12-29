@@ -6,15 +6,19 @@
             <!-- Blog Post Column list -->
             <div class="col-12 left">
                 <div class="row">
+                    <!-- for loop for creating new post in preview list -->
                     {% for post in post_list %}
                     <div class="col-md-4 mt-2 mb-2">
                         <div class="card mb-6">
                             <div class="card-body">
                                 <div class="blog-preview">
-                                    <!-- Display placeholder image if user has not uploaded one -->
+                                    <!-- Display placeholder image if user has not uploaded one,
+                                    all images have set width and height with object fit for aspect ratio
+                                    and defencive design -->
                                     {% if "placeholder" in post.image_upload.url %}
                                     <img class="card-img-top" src="https://i.imgur.com/sWaz0pA.jpg" />
                                     {% else %}
+                                    <!-- Display users uploaded image -->
                                     <img class="card-img-top" src="{{ post.image_upload.url }}" />
                                     {% endif %}
                                     <div class="blog-author">
@@ -22,12 +26,15 @@
                                     </div>
                                 </div>
                                 <div class="card-border">
+                                    <!-- Display blog post title and add truncatechars to only display 30 characters
+                                    for defensive design -->
                                     <a href="{% url 'blog_post' post.slug %}" class="blog-post-link">
                                         <h3 class="card-title text-capitalize">{{ post.title | truncatechars:30 }}</h3>
                                     </a>
                                     <hr />
                                     <p class="card-text h6">{{ post.date_created }}</p>
                                     <p class="card-text h6">
+                                        <!-- Display total like and comments on posts -->
                                         <i class="far fa-heart"></i> {{ post.total_likes }} |
                                         <i class="far fa-comments"></i> {{ post.comments.count }}
                                     </p>

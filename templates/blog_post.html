@@ -1,11 +1,15 @@
 {% extends 'base.html' %} {% block content %} {% load crispy_forms_tags %}
 
+<!-- Masthead Container for image and title text and author profile -->
 <div class="masthead">
     <div class="container">
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
+                <!-- Blog Title in h1 tags -->
                 <h1 class="blog-title">{{ post.title }}</h1>
+                <!-- Blogs author and date create in p tags -->
                 <p class="blog-subtitle">{{ post.author }} | {{ post.date_created }}</p>
+                <!-- Blog author profile link in p tags -->
                 <p class="blog-subtitle"><a href="{% url 'show_profile_page' post.author.profile.id %}">
                     <i class="fas fa-user"></i> About Me</a>
                 </p>
@@ -15,6 +19,7 @@
                 {% if "placeholder" in post.image_upload.url %}
                 <img src="https://i.imgur.com/sWaz0pA.jpg" width="100%" />
                 {% else %}
+                <!-- Display users uploaded image -->
                 <img src=" {{ post.image_upload.url }}" width="100%" />
                 {% endif %}
             </div>
@@ -22,6 +27,7 @@
     </div>
 </div>
 
+<!-- Checks if request user is the blog posts author to update or delete post -->
 {% if request.user == post.author %}
 <div class="container">
     <div class="row">
@@ -38,6 +44,7 @@
 </div>
 {% endif %}
 
+<!-- Blog Post Content -->
 <div class="container">
     <div class="row">
         <div class="col card">
@@ -49,23 +56,28 @@
                         {% if user.is_authenticated %}
                         <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
                             {% csrf_token %} {% if liked %}
+                            <!-- If post is liked post will display a filled in heart -->
                             <button type="submit" name="blogpost_id" value="{{ post.slug }}" class="btn-like">
                                 <i class="fas fa-heart"></i>
                             </button>
                             {% else %}
+                            <!-- If not liked show non filled heart icon -->
                             <button type="submit" name="blogpost_id" value="{{ post.slug }}" class="btn-like">
                                 <i class="far fa-heart"></i>
                             </button>
                             {% endif %}
                         </form>
                         {% else %}
+                        <!-- If post has no likes, will show non filled heart -->
                         <span class="text-secondary">
                             <i class="far fa-heart"></i>
                         </span>
                         {% endif %}
+                        <!-- Display total likes next to heart icon -->
                         <span class="text-secondary">{{ post.total_likes }} </span>
                         {% with comments.count as total_comments %}
                         <strong class="text-secondary cmts">
+                            <!-- Display total Comments next to comment icon -->
                             <i class="far fa-comments" style="padding-left: 0.5rem"></i>
                             {{ total_comments }}</strong>
                         {% endwith %}
@@ -79,10 +91,12 @@
             <hr />
         </div>
     </div>
+    <!-- Display Comments under blog post -->
     <div class="row">
         <div class="col-md-8 card">
             <h3>Comments:</h3>
             <div class="card-body">
+                <!-- Comment for looop to display comments in most recent at top -->
                 {% for comment in comments %}
                 <div class="comments">
                     <p class="font-weight-bold">
@@ -94,7 +108,8 @@
                     </p>
                     {{ comment.body | linebreaks }}
                 </div>
-                <!-- Update and delete comments buttons -->
+                <!-- Update and delete comments buttons if user logged in is comment author,
+                if not logged in or author will not display to user -->
                 {% if request.user == comment.author %}
                 <a href="{% url 'update_comment' post.slug comment.pk %}" class="btn btn-signup badge">
                     <i class="fas fa-pen"></i> Update this comment</a>
@@ -149,6 +164,7 @@
         <div class="col-md-4 card">
             <div class="card-body">
                 <h3>Leave a comment:</h3>
+                <!-- If user is logged in, the user can post a comment -->
                 {% if user.is_authenticated %}
                 <p>Posting as: {{ user.username }}</p>
                 <form method="post">
@@ -156,6 +172,8 @@
                     <button type="submit" class="btn btn-signup mt-2 mb-2 btn-lg">Submit</button>
                 </form>
                 {% else %}
+                <!-- If user is not logged in then a placeholder message displays to instruct user
+                on how to create a comment -->
                 <p>
                     To leave a comment or like a post, please log in. If you do not have
                     an account, you can register now!
