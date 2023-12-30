@@ -74,4 +74,14 @@ Live Version of the website - <a href="https://p3-battleship-dc-6afed2473960.her
 ### Features
 
 ### Navbar
-The navbar is a feature that is present on all sites, it uses bootstraps built in fixed top feature
+The navbar is a feature that is present on all sites, it uses bootstraps-built styling and uses fixed-top to keep the navigation bar at the top of the page even when scrolling to allow users a better user experience.
+
+On the left-hand side of the navbar holds the Blog Logo and Title, which can be clicked and takes the user to the home page.
+
+The right-hand side of the navigation page holds the key URLs. When a user is not logged in it displays as:
+- Not Logged in: Home, Register, Login and "You're Not Logged In" text to inform the user
+<details open>
+<summary>Navbar Logged Out Image</summary>
+<br>
+[Navbar Logged Out Image](/readME-assets/features/Navbar_logged_out.png)
+</details>
