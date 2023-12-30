@@ -72,3 +72,6 @@ Live Version of the website - <a href="https://p3-battleship-dc-6afed2473960.her
 
 ## Design
 ### Features
+
+### Navbar
+The navbar is a feature that is present on all sites, it uses bootstraps built in fixed top feature
