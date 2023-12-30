@@ -23,6 +23,7 @@ Live Version of the website - <a href="https://inphysical-plans-e97fa8a6618e.her
     - [**Update Comments**](#update-comments)
     - [**Delete Comments**](#delete-comments)
     - [**Delete Post**](#delete-post)
+    - [**Custom Error Page**]
   - [**User Accounts**](#user-accounts)
     - [**Register Account**](#register-account)
     - [**Login Page**](#login-page)
@@ -54,8 +55,6 @@ Live Version of the website - <a href="https://inphysical-plans-e97fa8a6618e.her
   - [**Deployment**](#deployment)
   - [**Credits**](#credits)
   - [**Acknowledgements**](#acknowledgements)
-
-
 
 ## **User Experience**
 ### **Target Audience**
@@ -152,7 +151,7 @@ The home page divides the blog preview posts into 3 separate columns, on mobile 
 ### Create a post page:
 Users who are logged into the blog are able to create posts. Once a user has registered their account they can get right into creating blog posts.
 
-The first think they need to do is navigate to the "Create a Post" in the nav bar. If this is not avalible it is because they are not logged in. If it is then they follow the link and will be brought to the Create a post page. This will allow the User to Enter a Title, Image and content. Users have the ability to edit their blog posts using the Summernote widget that offers a range of text editings, such as font colour, text sizes, table and even insert images and many more features.
+The first thing they need to do is navigate to the "Create a Post" in the nav bar. If this is not available it is because they are not logged in. If it is then they follow the link and will be brought to the Create a post page. This will allow the User to Enter a Title, Image and content. Users have the ability to edit their blog posts using the Summernote widget that offers a range of text editings, such as font colour, text sizes, table and even insert images and many more features.
 
 Once the user is finished and is ready to submit their post, the submit link will redirect them to the newly created blog post so they are the first to see it and if any changes are needed.
 
@@ -189,7 +188,7 @@ If the post does not have any comments then a Placeholder message is displayed a
 
 If the user is not logged in they will not be able to make a comment. Users are prompted to either log in or register to be able to post and also leave comments and likes on the page.
 
-Users are able to update their own comments even on posts they did not create. As seen bellow Chris can edit his own comment but no the rock's comment.
+Users are able to update their own comments even on posts they did not create. As seen below Chris can edit his own comment but no the rock's comment.
 
 ![View Comments](/readME-assets/features/comments.png)
 
@@ -240,7 +239,7 @@ If a user would like to delete a comment and they want it removed. If they are l
 </details>
 
 ### Delete Post
-If the user decides that they want to delete their blog post for whatever reason they have, they have that ability to, just like updating their post. Firs the blog checks that the user logged in is the user that is making the request. If the page confirms. then the user has the option to delete the post. a Modal is used similar to the comment to confirm that if they delete the post and is not a mistake. A modal message is triggered and tells the user the post they want to delete and if they want to delete the post.
+If the user decides that they want to delete their blog post for whatever reason they have, they have that ability to, just like updating their post. First the blog checks that the user logged in is the user that is making the request. If the page confirms. then the user has the option to delete the post. A modal is used similar to the comment to confirm that if they delete the post and is not a mistake. A modal message is triggered and tells the user the post they want to delete and if they want to delete the post.
 
 ![Post Deleted](/readME-assets/features/delete%20post.png)
 
@@ -256,7 +255,7 @@ The blog has user accounts and authentication so users need to be able to login 
 </details>
 
 ### Logout Page
-If the user has decided they want to logout of their account then they have the ability too. The user once logged in has the logout url in the navigation bar. when they click that they are taken to the logout page and are asked to confirm they want to logout. Once they logout they are redirected to the home page and a message is displayed to confirm they signed out and from what account.
+If the user has decided they want to log out of their account then they have the ability to. The user once logged in has the logout URL in the navigation bar. when they click that they are taken to the logout page and are asked to confirm they want to log in. Once they log out they are redirected to the home page and a message is displayed to confirm they signed out and from what account.
 
 ![Signout User](/readME-assets/features/signout.png)
 <details>
@@ -267,7 +266,7 @@ If the user has decided they want to logout of their account then they have the 
 
 ### Login Page
 To use the features on the website, users need to be logged into the page. When the user opens the site they are on the home page, in the navigation bar they are able to sign in to the website and use the features.
-Once they signin they are redirected to the home page and are able to use the website freely.
+Once they sign in they are redirected to the home page and are able to use the website freely.
 
 ![Signin User](/readME-assets/features/signin.png)
 <details>
@@ -277,7 +276,7 @@ Once they signin they are redirected to the home page and are able to use the we
 </details>
 
 ### Django Admin
-To manage all of the content on the website a user has Admin privileges called superuser. This allows the superuser to administer the site and can use the admin panel to easily manage users and content. This can delete updates and create any and all posts. This is used for any unwanted content posts or trolling.
+To manage all of the content on the website a user has Admin privileges called superuser. This allows the superuser to administer the site and use the admin panel to easily manage users and content. This can delete updates and create any and all posts. This is used for any unwanted content posts or trolling.
 
 ![Admin](/readME-assets/features/admin.png)
 
@@ -285,16 +284,16 @@ To manage all of the content on the website a user has Admin privileges called s
 ## Profile
 ### View Profile Page
 When users create their accounts, users profiles are automatically created for the user. This is a place where they can upload their own content and make it more personal so people can get to know them and see who they are reading or interacting with. 
-The profile page has a range of fields that they can fill. Only Required is a small bio, the rest is recommended to fill out but optional. Users can upload a photo, first and last name, bio, gym focus, occupation and social medial links, Twitter, facebook, Instagram and a website or other link.
+The profile page has a range of fields that they can fill. Only Required is a small bio, the rest is recommended to fill out but optional. Users can upload a photo, first and last name, bio, gym focus, occupation and social media links, Twitter, facebook, Instagram and a website or other link.
 
-This allows users to contact they authors outside the website if they want to or just get to know them on a more personal level. But is optional so users can put as much or as little as they like.
+This allows users to contact the authors outside the website if they want to or just get to know them on a more personal level. But is optional so users can put as much or as little as they like.
 
 ![New User Profile](/readME-assets/features/new_user_pfrofile.png)
 
 ![User Profile](/readME-assets/features/profile.png)
 
 ### Edit Profile Page
-Users are check to confirmed if the profile user id matches with the correct profile. if they match then they are able to update or delete their profile. The user has the same fields as before and can update or remove any information they would like to. Once they updated their profile they redirected back and received a message.
+Users are checked to confirm if the profile user id matches the correct profile. if they match then they are able to update or delete their profile. The user has the same fields as before and can update or remove any information they would like to. Once they updated their profile they redirected back and received a message.
 
 ![Edit Profile](/readME-assets/features/update%20profile.png)
 <details>
@@ -304,7 +303,7 @@ Users are check to confirmed if the profile user id matches with the correct pro
 </details>
 
 ### Delete Profile
-User have the option to delete their accounts if they choose so. users are directed to their profile page and checked that they are indeed the profile account user. They are given an option to delete their account. A modal is used to confirm that request and users are instructed that if they delete the account they can no longer post comments or like posts. If the users chooses to delete there account, the account is deleted and they are redirected to home page and the account removed.
+User have the option to delete their accounts if they choose so. users are directed to their profile page and checked that they are indeed the profile account user. They are given an option to delete their account. A modal is used to confirm that request and users are instructed that if they delete the account they can no longer post comments or like posts. If the users choose to delete their account, the account is deleted and they are redirected to the home page and the account removed.
 
 When a user deletes their account their posts and comments are also deleted, which they are informed so if they have a block that is removed automatically. As shown bellow
 
@@ -323,8 +322,8 @@ The Favicon is the small logo at the top of the website browser linked to your p
 ![Favicon](/readME-assets/features/favicon.png)
 
 ## Future Features
-- A feature I wanted to implement but was not a high priority was to display users posts on their profile page. The feature would have been useful to view posts from the particular user if they had great posts but due to time and knowledge, i was not able to complete it.
-- A search function i think would be a priority if I was to start again, being able to search keywords to find the right blog post.
+- A feature I wanted to implement but was not a high priority was to display users' posts on their profile page. The feature would have been useful to view posts from the particular user if they had great posts but due to time and knowledge, I was not able to complete it.
+- A search function I think would be a priority if I were to start again, being able to search keywords to find the right blog post.
 
 ## Design
 ### Data Model
