@@ -23,3 +23,6 @@ class PostForm(forms.ModelForm):
             'image_upload',
             'content',
         ]
+        widgets = {
+            'content': SummernoteWidget(),
+        }
