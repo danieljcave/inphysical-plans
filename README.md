@@ -243,6 +243,11 @@ If the user decides that they want to delete their blog post for whatever reason
 
 ![Post Deleted](/readME-assets/features/delete%20post.png)
 
+### Custom Error Pages
+With the possibility of a user getting a error code from changing the URL, or trying to use the url to edit other profiles, which cannot happed due to authentication statements. I have implemented custom error pages that is display to the user and provide a reason for the error. It uses my base.html for a more diverese look, but provides the error code and reson for the error so they are not left confused. Expample of 404 not found, if a user has post saved but is deleted this error will display.
+
+![Error 404 Page](/readME-assets/tests/custom_error.png)
+
 ## User Accounts
 ### Register Account
 The blog has user accounts and authentication so users need to be able to login to the account to carry out user functions. When the user joins the sign they can first register their account. The Registers require a username and a password, email is optional. Once the user registers on the website they are auto-redirected to the home page and a message is displayed. Then they are free to use the website and all features.
