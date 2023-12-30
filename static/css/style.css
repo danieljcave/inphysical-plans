@@ -2,7 +2,7 @@ body {
     background: #c0c0c0;
     font-family: "Roboto", sans-serif;
     font-weight: 600;
-    padding-top: 4rem;
+    padding-top: 3.75rem;
     padding-bottom: 6rem;
 }
 
@@ -30,8 +30,7 @@ body {
 }
 
 .card-body {
-    padding-left: 0;
-    padding-right: 0;
+    padding: 0;
 }
 .card-text {
     margin-top: 1rem;
