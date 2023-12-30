@@ -5,7 +5,7 @@
 
 InPhysical Plans is a training blog that allows both users and trainer to post their training plans and interact with other users. InPhysical Plans allows users to create blog posts and like or comment on the posts. Users can interact with posts to ask questions leave reviews or improvements to the plans and the author can interact with them. 
 
-Live Version of the website - <a href="" target="_blank">Click Here!</a>
+Live Version of the website - <a href="https://inphysical-plans-e97fa8a6618e.herokuapp.com/" target="_blank">Click Here!</a>
 
 ## Table Of Contents
 - [**User Experience**](#user-experience)
