@@ -71,11 +71,11 @@ Live Version of the website - <a href="https://p3-battleship-dc-6afed2473960.her
 - Easily navigate to blog posts in relevant content.
 - Customize their profiles and engage with the other users through comments and likes.
 
-An Agile methodology was used to plan this project. With user stories and a criiera to meet. 
-Using Github Project board along with my own trello board. The goal of the project is to create 
-a fully function blog with full CRUD capability and user profiles for post, commentsing and 
-updating user profiles. Each user story has its own criteria and to be met and pass. All User stories 
-listed where achived with success and completed.
+An Agile methodology was used to plan this project. With user stories and criteria to meet. 
+Using the GitHub Project board along with my Trello board. The goal of the project is to create 
+a fully function blog with full CRUD capability and user profiles for posting, commenting and 
+updating user profiles. Each user story has its criteria to be met and passed. All User stories 
+listed were achieved with success and completed.
 
 ### **User Stories**
 **Admin and Account**
@@ -137,9 +137,9 @@ The right-hand side of the navigation page holds the key URLs. When a user is no
 </details>
 
 ### Home page - Blog Preview
-The home page view is the centre of the website. This is where all of the blog posts are held for the users to view right off the bat. The home page uses both base.html and index.html. The base.html holds all of the information needed to make this website work. It holds the header and all the necessary tags, the Navbar and footer, the container for messages and the main content which uses python block content tags to display. 
+The home page view is the centre of the website. This is where all of the blog posts are held for the users to view right off the bat. The home page uses both base.html and index.html. The base.html holds all of the information needed to make this website work. It holds the header and all the necessary tags, the Navbar and footer, the container for messages and the main content which uses Python block content tags to display. 
 
-The home page divides the blog preview posts into 3 separate columns, on mobile view, it goes to a single-column view. The page will hold 6 blog post previews before a pagination if a statement creates a new page. Then a button at the bottom of the page will appear for the user to browse through all of the blogs
+The home page divides the blog preview posts into 3 separate columns, on mobile view, it goes to a single-column view. The page will hold 6 blog post previews before pagination if a statement creates a new page. Then a button at the bottom of the page will appear for the user to browse through all of the blogs
 
 ![Blog Preview Page](/readME-assets/features/home_page.png)
 
@@ -150,11 +150,11 @@ The home page divides the blog preview posts into 3 separate columns, on mobile 
 </details>
 
 ### Create a post page:
-Users that are logged into the blog are able to create posts. Once a user has registered their account they can get right into creating blog posts.
+Users who are logged into the blog are able to create posts. Once a user has registered their account they can get right into creating blog posts.
 
-First think they need to do is navigate to the "Create a Post" in the nav bar. If this is not avalible it is because they are not logged in. If it is then they follow the link and will be brought to the Create a post page. This will all the User to Enter a Title, Image and content. Users have the ability to edit there blog posts using the Summernote widget that offeres range of text edititng, such as font color, text sizes, table and even insert images and many more features.
+The first think they need to do is navigate to the "Create a Post" in the nav bar. If this is not avalible it is because they are not logged in. If it is then they follow the link and will be brought to the Create a post page. This will allow the User to Enter a Title, Image and content. Users have the ability to edit their blog posts using the Summernote widget that offers a range of text editings, such as font colour, text sizes, table and even insert images and many more features.
 
-Once the user is finished and is ready to submit their post, the submit link will redirect them to the newely created blog post so they are the first to see it and if any changes are needed.
+Once the user is finished and is ready to submit their post, the submit link will redirect them to the newly created blog post so they are the first to see it and if any changes are needed.
 
 ![Create Blog Post](/readME-assets/features/create_post.png)
 
@@ -165,14 +165,14 @@ Once the user is finished and is ready to submit their post, the submit link wil
 </details>
 
 ### View Blog Post
-All users are able to view anyone blog post weither they are logged in or not, Users that are not logged in are not able to interact with the post such as like or comment on posts. If they are not logged in a prompt at the comment section informs them to sign in if they want to interect with the post.
+All users are able to view anyone's blog post whether they are logged in or not, Users that are not logged in are not able to interact with the post such as like or commenting on posts. If they are not logged in a prompt at the comment section informs them to sign in if they want to interact with the post.
 
-The Blog post displays the users Title, author name and date created. Along with a link to the users profile.
-If the user that is viewing the blog is the blogs author, they will have the options to update and delete the post and will have 2 buttons avalible only to them.
+The Blog post displays the user's Title, author name and date created. Along with a link to the user's profile.
+If the user that is viewing the blog is the blog's author, they will have the option to update and delete the post and will have 2 buttons available only to them.
 
-Following down the page all of the blogs contenet is posts as the user created it and displays as edited.
+Following down the page all of the blog content is posted as the user created it and displayed as edited.
 
-Next is the like and comment section. The page has both like and comment counts that increase and decress depending on the total likes and comments. If the user would like to leave feedback or ask question or have a conversation they can post a comment and will display in order.
+Next is the like and comment section. The page has both like and comment counts that increase and decrease depending on the total likes and comments. If the user would like to leave feedback ask questions or have a conversation they can post a comment and will display in order.
 
 ![view blog post](/readME-assets/features/view_post.png)
 
@@ -187,9 +187,9 @@ Comments are a good way for users to interact with each other, share feedback an
 
 If the post does not have any comments then a Placeholder message is displayed as "No comments on this post".
 
-If the user is not logged in they will not be able to make a comment. Users are prompted to either login or register to be able to post and also leave comments and likes on the page.
+If the user is not logged in they will not be able to make a comment. Users are prompted to either log in or register to be able to post and also leave comments and likes on the page.
 
-Users are able to update their own comments even on posts they did not create. As seen bellow Chris can edit his own comment but no the rocks comment.
+Users are able to update their own comments even on posts they did not create. As seen bellow Chris can edit his own comment but no the rock's comment.
 
 ![View Comments](/readME-assets/features/comments.png)
 
@@ -206,9 +206,9 @@ Users are able to update their own comments even on posts they did not create. A
 </details>
 
 ### Update Blog Post
-Users that are logged in are able to edit their owen blog posts. If the user that is logged in is the blog author they are shown a update post button. THis redirects them to the blogs page that uses slug url, which is the title of the blog post, with spaces replaced with "-". this is for better readability.
+Users who are logged in are able to edit their own blog posts. If the user that is logged in is the blog author they are shown an update post button. This redirects them to the blog page that uses a slug URL, which is the title of the blog post, with spaces replaced with "-". this is for better readability.
 
-Once the user clicks update they are take to the page that is similar to creating the post. All of their data is still there so they can make as small a change and as large a change that they want to. Once the change is made the user is redirected to the blog post that is updated.
+Once the user clicks update they are taken to the page that is similar to creating the post. All of their data is still there so they can make as small a change and as large a change as they want to. Once the change is made the user is redirected to the blog post that is updated.
 
 ![View Update Post](/readME-assets/features/update_post.png)
 <details>
@@ -229,7 +229,7 @@ Users are able to update comments that are made and are only able to update thei
 </details>
 
 ### Delete Comments
-If a user would like to delete a comment and they want it removed. If they are logged in and are the author of the comment, just like the update button and delete this comment button is next to it. The user can click this and a pop up message displays to check if the user really does want to delete this comment. The modal asked the user to confirm that they do. if they do then the comment is deleted and page is refresh and comment removed. A message will be displayed for user feedback.
+If a user would like to delete a comment and they want it removed. If they are logged in and are the author of the comment, just like the update button and delete this comment button is next to it. The user can click this and a pop-up message displays to check if the user really does want to delete this comment. The modal asked the user to confirm that they did. if they do then the comment is deleted and the page is refreshed and the comment is removed. A message will be displayed for user feedback.
 
 ![Comment Deleted](/readME-assets/features/delete_comment.png)
 <details>
@@ -240,13 +240,13 @@ If a user would like to delete a comment and they want it removed. If they are l
 </details>
 
 ### Delete Post
-If the user decides that they want to delete their blog post for whatever reason they have, they have that ability to, just like updateding their post. Firs the blog checks that the user logged in is the user that is making the request. If the page confirms. then the user has the option to delete the post. a Modal is used similar to the comment to confirm that if they delete the post and is not a mistake. A modal messge is triggered and tells the user the post they want to delete and if they want to delete the post.
+If the user decides that they want to delete their blog post for whatever reason they have, they have that ability to, just like updating their post. Firs the blog checks that the user logged in is the user that is making the request. If the page confirms. then the user has the option to delete the post. a Modal is used similar to the comment to confirm that if they delete the post and is not a mistake. A modal message is triggered and tells the user the post they want to delete and if they want to delete the post.
 
 ![Post Deleted](/readME-assets/features/delete%20post.png)
 
 ## User Accounts
 ### Register Account
-The blog has user accounts and authentication so users need to be able to login to account to carry out user functions. When the user joins the sign they can first register theirs account. The Registers requires a username and a password, email is optional. Once the user registers on the website they are auto redirected to the home page and a message displayed. Then they are free to use the website and all features.
+The blog has user accounts and authentication so users need to be able to login to the account to carry out user functions. When the user joins the sign they can first register their account. The Registers require a username and a password, email is optional. Once the user registers on the website they are auto-redirected to the home page and a message is displayed. Then they are free to use the website and all features.
 
 ![New User Signup Page](/readME-assets/features/signup.png)
 <details>
@@ -256,7 +256,7 @@ The blog has user accounts and authentication so users need to be able to login 
 </details>
 
 ### Logout Page
-If the user has decided they want to logout of their account then they have the ability too. The user once logged in has the logout url in the navigation bar. when they click that they are take to the logout page and are asked to confirm they want to logout. Once they logout they are redirected to the home page and a message is displayed to confirm they signed out and from what account.
+If the user has decided they want to logout of their account then they have the ability too. The user once logged in has the logout url in the navigation bar. when they click that they are taken to the logout page and are asked to confirm they want to logout. Once they logout they are redirected to the home page and a message is displayed to confirm they signed out and from what account.
 
 ![Signout User](/readME-assets/features/signout.png)
 <details>
@@ -266,8 +266,8 @@ If the user has decided they want to logout of their account then they have the 
 </details>
 
 ### Login Page
-To use the features on the website, users need to be logged into the page. When the user opens the site they are on the home page, in the navigation bar they are able to signin to the website and use the featurs.
-Once they signin they are redirect to the home page and are able to use the website freely.
+To use the features on the website, users need to be logged into the page. When the user opens the site they are on the home page, in the navigation bar they are able to sign in to the website and use the features.
+Once they signin they are redirected to the home page and are able to use the website freely.
 
 ![Signin User](/readME-assets/features/signin.png)
 <details>
@@ -277,15 +277,15 @@ Once they signin they are redirect to the home page and are able to use the webs
 </details>
 
 ### Django Admin
-To manage all of the content on the website a user has Admin privilages called superuser. This allows the superuser to administer the site and can use the admin panel to easily mange users and content. This can delete update create any and all posts. This is used for any unwanted content posts or trolling.
+To manage all of the content on the website a user has Admin privileges called superuser. This allows the superuser to administer the site and can use the admin panel to easily manage users and content. This can delete updates and create any and all posts. This is used for any unwanted content posts or trolling.
 
 ![Admin](/readME-assets/features/admin.png)
 
 
 ## Profile
 ### View Profile Page
-When users create there accounts, users profiles are automaticly created for the user. This is a place they can upload their own content and make it more personal so people can get to know them and see who they are reading or interacting with. 
-The profile page has a range of fields that they can fill. Only Required is a small bio, the rest is recomended to fill out but optional. User can upload a photom, first and last name, bio, gym focus, occupation and social medial links, twitter, facebook, instagram and a website or other link.
+When users create their accounts, users profiles are automatically created for the user. This is a place where they can upload their own content and make it more personal so people can get to know them and see who they are reading or interacting with. 
+The profile page has a range of fields that they can fill. Only Required is a small bio, the rest is recommended to fill out but optional. Users can upload a photo, first and last name, bio, gym focus, occupation and social medial links, Twitter, facebook, Instagram and a website or other link.
 
 This allows users to contact they authors outside the website if they want to or just get to know them on a more personal level. But is optional so users can put as much or as little as they like.
 
@@ -294,7 +294,7 @@ This allows users to contact they authors outside the website if they want to or
 ![User Profile](/readME-assets/features/profile.png)
 
 ### Edit Profile Page
-Users are check to confirmed if the profile users id matches with the correct profile. if they match then they are able to update or delete there profile. The user has the same fields as before and can update or remove any infomation they would like to. Once they update theyre profile they redirected back and recived a message.
+Users are check to confirmed if the profile user id matches with the correct profile. if they match then they are able to update or delete their profile. The user has the same fields as before and can update or remove any information they would like to. Once they updated their profile they redirected back and received a message.
 
 ![Edit Profile](/readME-assets/features/update%20profile.png)
 <details>
@@ -304,9 +304,9 @@ Users are check to confirmed if the profile users id matches with the correct pr
 </details>
 
 ### Delete Profile
-User have the option to delete their accounts if they choose so. users are directed to their profile page and checked that they are inded the profile account user. They are given and option to delete there account. A modal is used to confirm that request and users are instructed that if they delete the account they can no longer post comment or like post. If the users chooses to delete there account, the account is deleted and they are redirect to home page and account removed.
+User have the option to delete their accounts if they choose so. users are directed to their profile page and checked that they are indeed the profile account user. They are given an option to delete their account. A modal is used to confirm that request and users are instructed that if they delete the account they can no longer post comments or like posts. If the users chooses to delete there account, the account is deleted and they are redirected to home page and the account removed.
 
-When a user deletes their account their posts and coments are also deleted, which they are informed so if they have a block that is removed automaticlly. As shown bellow
+When a user deletes their account their posts and comments are also deleted, which they are informed so if they have a block that is removed automatically. As shown bellow
 
 ![Delete Account](/readME-assets/features/delete%20profile.png)
 <details>
@@ -318,18 +318,18 @@ When a user deletes their account their posts and coments are also deleted, whic
 
 ## Additional features
 ### Favicon
-The Favicon is the small logo at the top of the website browser linked to your page, it is most helpfull when a user has multiple browsers open, they can easily see which tab is yours.
+The Favicon is the small logo at the top of the website browser linked to your page, it is most helpful when a user has multiple browsers open, they can easily see which tab is yours.
 
 ![Favicon](/readME-assets/features/favicon.png)
 
 ## Future Features
-- A feature i wanted to implement but was not a highpriority was to display users post on their profile page. The feature would have been usefull to view posts from particlur user if they had great posts but due to time and knowledge i was not able to complete.
-- A search function i think would be a priority if i was to start again, being able to search keywords to find the right blog post.
+- A feature I wanted to implement but was not a high priority was to display users posts on their profile page. The feature would have been useful to view posts from the particular user if they had great posts but due to time and knowledge, i was not able to complete it.
+- A search function i think would be a priority if I was to start again, being able to search keywords to find the right blog post.
 
 ## Design
 ### Data Model
-This project is hosted on heroku and hosted database is ElephantSQL.
-Cloudinary is used to store all the blog uploaded umages and profile images. Three Cutom models were created for this app. Post Model for blog post, Comment model for comments and Profile Model created for user profiles. With the default Django User model already included.
+This project is hosted on Heroku and the hosted database is ElephantSQL.
+Cloudinary is used to store all the blog uploaded images and profile images. Three Custom models were created for this app. Post Model for a blog post, Comment model for comments and Profile Model created for user profiles. With the default Django User model already included.
 
 ![Post Model](/readME-assets/features/Post%20Model.png)
 
@@ -352,28 +352,28 @@ Roboto Font is the primary font-family used in this project.
 
 ### Frameworks and Libraries Used:
 
-  - [Bootstrap:](https://getbootstrap.com/) Bootstrap CSS Framework used for styling and to build responsive web pages.
+  - [Bootstrap:](https://getbootstrap.com/) Bootstrap CSS Framework is used for styling and building responsive web pages.
   - [Cloudinary:](https://cloudinary.com/) Used to store all blog images and uploaded images.
   - [Coverage:](https://coverage.readthedocs.io/en/latest/index.html) Used for measuring code coverage of Python test files.
   - [Django:](https://www.djangoproject.com/) Main Python framework used in the development.
   - [Django Allauth:](https://django-allauth.readthedocs.io/en/latest/index.html) Used for authentication and account registration.
   - [Django Crispy Forms:](https://django-crispy-forms.readthedocs.io/en/latest/) Used to simplify the rendering of Django forms.
-  - [dj_database_url:](https://pypi.org/project/dj-database-url/) Used to allow database urls to connect to the postgres database.
-  - [Django Countries:](https://pypi.org/project/django-countries/) Used for country selection drop down
+  - [dj_database_url:](https://pypi.org/project/dj-database-url/) Used to allow database URLs to connect to the Postgres database.
+  - [Django Countries:](https://pypi.org/project/django-countries/) Used for country selection drop-down
   - [Gunicorn:](https://gunicorn.org/) Green Unicorn, used as the Web Server to run Django on Heroku.
-  - [Summernote:](https://github.com/summernote/django-summernote) To provide a editor for customizing new blog content and add images.
+  - [Summernote:](https://github.com/summernote/django-summernote) To provide an editor for customizing new blog content and add images.
 
 ### Software and Web Applications Used:
 
   - [Google Fonts:](https://fonts.google.com/) To import font family Roboto
   - [Font Awesome:](https://fontawesome.com/) Used for style icons for nav and footer and other links
   - [Chrome DevTools:](https://developer.chrome.com/docs/devtools/) To test inside of different screen sizes
-  - [GitHub:](https://github.com/) GitHub is used to store the projects code and update and pull from. Aswell as host user stories
+  - [GitHub:](https://github.com/) GitHub is used to store the project's code and update and pull from. As well as host user stories
   - [Heroku:](https://www.heroku.com/) For deployment and hosting of the application.
   - [HTML Validator:](https://validator.w3.org/) Check your code for HTML validation.
   - [CI Python Linter](https://pep8ci.herokuapp.com/) Used to validate python code
   - [W3 CSS Validator:](https://jigsaw.w3.org/css-validator/) Check your code for CSS validation.
-  - [Codeanywhere](https://codeanywhere.com/signin) Used as virtual enviroment for coding
+  - [Codeanywhere](https://codeanywhere.com/signin) Used as virtual environment for coding
   - [ElephantSQL:](https://www.elephantsql.com/) Used Elephant to host PostgreSQL Service
   - [Stack Overflow](https://stackoverflow.com/) Used for help when hit bumps or errors
 
@@ -381,7 +381,7 @@ Roboto Font is the primary font-family used in this project.
 ### Validator Testing
 ### HTML Testing
 All HTML Pages passed validation testing except for, Create_post.html.
-Due to usinging the SummernoteWidget for blog editing the ifram causing a number of errors in the code. At first i decided to remove the summernote and not use customization. But on fursther thought the lack of formatability was causing a lack of engagement for the block post and a necisary for the website to serve its purspose and the formatability could not be sacrifices and hope the decision was correct to do so.
+Due to using the SummernoteWidget for blog editing the iframe caused a number of errors in the code. At first, I decided to remove the summernote and not use customization. But on further thought the lack of formability was causing a lack of engagement for the block post and a necessary for the website to serve its purpose and the formatability could not be sacrificed and hope the decision was correct to do so.
 
 ![All HTML Pages Validation](/readME-assets/tests/html_test.png)
 
@@ -397,7 +397,7 @@ The W3C CSS validator was used to validate the css. No issues found
 ![CSS Validation](/readME-assets/tests/css_test.png)
 
 ### CI Python Linter
-All python files in the blog app tested and passed
+All Python files in the blog app were tested and passed
 <details>
 <summary>Blog App Python Test</summary>
 
@@ -426,7 +426,7 @@ Lighthouse Pass Test:
 ## Automated Testing
 ### Django testing tools:
 
-Django TestCase was used to create authomatic test for python files. The rest reporting tool 'Coverage' was installed and used to test and then provide a report.
+Django TestCase was used to create automatic test for python files. The rest reporting tool 'Coverage' was installed and used to test and then provide a report.
 
 ![Coverage Test](/readME-assets/tests/python_testing.png)
 
@@ -434,41 +434,64 @@ Django TestCase was used to create authomatic test for python files. The rest re
 - To further test that the application is working correctly and functions as expected manual testing was carried out along side user stories to make sure criterai was met.
 
 **Admin and Account**
-- US1 - Account registration, login and logout
-- US2 - Manage Posts
-- US24 - Manage User Accounts
-- US25 - Delete User Accounts
+US1 - Account registration, login and logout
+	- Acceptance Criteria:
+		-To register a new user, must enter username and password. (email is optional)
+		- Users should not be able to register the same username if one is already created.
+  		- User are able to log out of their account.
+   	- I have tested:
+    		That username and password are required and email optional
+      		THe registering of a user with a name same as other user reports and erro.
+US2 - Manage Posts
+	- Acceptance Criteria:
+ 		Site admin can log into the admin portal with superuser account
+		Site admin can manage all posts, including superuser account
+		Site admin can manage all comments and likes, including super users
+  	- I have tested:
+   		Site admin i can log into the admin portal with superuser account
+     		Site admin can manage delete and create all posts and comments including super user
+       		Site admin can manage all comments and likes including super user
+US24 - Manage User Accounts
+	- Acceptance Criteria:
+ 		Superuser/admin can edit users accounts
+   	- I have tested:
+    		Superuser can edit all user accounts
+US25 - Delete User Accounts
+	- Acceptance Criteria:
+ 		Admins can delete users accounts
+   	- I have tested:
+    		Admin account can delete other user accounts
 
 **Blog Posts**
-- US3 - User Story: View post list
-- US4 - User Story: Open a blog post
-- US5 - User Story: Create a blog post
-- US6 - User Story: Edit Post
-- US7 - User Story: Delete post
-- US8 - Placeholder Images
+US3 - User Story: View post list
+US4 - User Story: Open a blog post
+US5 - User Story: Create a blog post
+US6 - User Story: Edit Post
+US7 - User Story: Delete post
+US8 - Placeholder Images
 
 **User Profiles**
-- US21 - View Profile
-- US22 - Edit User Profile
-- US23 - Delete Profile/Account
+US21 - View Profile
+US22 - Edit User Profile
+US23 - Delete Profile/Account
 
 **Comments**
-- US9 - View total comments
-- US12 - Leave a comment
-- US13 - View Comments
-- US15 - Update Comments
-- US16 - Delete Comments
+US9 - View total comments
+US12 - Leave a comment
+US13 - View Comments
+US15 - Update Comments
+US16 - Delete Comments
 
 **Likes**
-- US10 - View Total Likes
-- US11 - Leave a like
-- US14 - View Likes
+US10 - View Total Likes
+US11 - Leave a like
+US14 - View Likes
 
 **UX/UI**
-- US17 - Responsiveness
-- US18 - Site Design
-- US19 - System messages
-- US20 - Favicon
+US17 - Responsiveness
+US18 - Site Design
+US19 - System messages
+US20 - Favicon
 
 
 
