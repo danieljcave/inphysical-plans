@@ -8,6 +8,7 @@ InPhysical plans is a training blog that allows both users and trainer to post t
 Live Version of the website - <a href="https://p3-battleship-dc-6afed2473960.herokuapp.com/" target="_blank">Click Here!</a>
 
 ## Table Of Contents
+<<<<<<< HEAD
 - [**InPhysical Plans**](#inphysical-plans)
   - [**Milestone Project 4 for Code Institute Full Stack Software Development.**](#milestone-project-4-for-code-institute-full-stack-software-development)
     - [Author - Daniel Cave](#author---daniel-cave)
@@ -20,6 +21,16 @@ Live Version of the website - <a href="https://p3-battleship-dc-6afed2473960.her
     - [Features](#features)
     - [Navbar](#navbar)
     - [Home page - Blog Preview](#home-page---blog-preview)
+=======
+* [**User Experience**](#user-experience)
+    * [**Target Audience**](#target-audience)
+    * [**User Goals**](#user-goals)
+    * [**User Stories**](#user-stories)
+* [**Design**](#design)
+    * [**Features**](#features)
+        * [**Navbar**](#navbar)
+        * [**Home page**](#home-page---blog-preview)
+>>>>>>> 4486cef2132651548a1ff2ed87840ee4eb6abbaa
 
 
 
