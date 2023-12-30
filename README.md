@@ -83,5 +83,5 @@ The right-hand side of the navigation page holds the key URLs. When a user is no
 <details open>
 <summary>Navbar Logged Out Image</summary>
 <br>
-[Navbar Logged Out Image](/readME-assets/features/Navbar_logged_out.png)
+
 </details>
