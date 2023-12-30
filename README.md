@@ -41,8 +41,8 @@ Live Version of the website - <a href="https://inphysical-plans-e97fa8a6618e.her
     - [**Typyography**](#typography)
   - [**Technologies Used**](#technologies-used)
     - [**Languages Used**](#languages-used)
-    - [**Frameworks and Libraries Used**]
-	  - [**Software and Web Applications Used**]
+    - [**Frameworks and Libraries Used**](#frameworks-and-libraries-used)
+	  - [**Software and Web Applications Used**](#software-and-web-applications-used)
   - [**Testing**](#testing)
     - [**Validator Testing**](#validator-testing)
       - [**HTML Testing**](#html-testing)
@@ -438,6 +438,7 @@ Django TestCase was used to create automatic test for python files. The rest rep
 - To further test that the application is working correctly and functions as expected manual testing was carried out along side user stories to make sure criterai was met.
 
 **Admin and Account**
+
 US1 - Account registration, login and logout
 	- Acceptance Criteria:
 		-To register a new user, must enter username and password. (email is optional)
@@ -446,6 +447,7 @@ US1 - Account registration, login and logout
    	- I have tested:
     		That username and password are required and email optional
       		THe registering of a user with a name same as other user reports and erro.
+
 US2 - Manage Posts
 	- Acceptance Criteria:
  		Site admin can log into the admin portal with superuser account
@@ -455,11 +457,13 @@ US2 - Manage Posts
    		Site admin i can log into the admin portal with superuser account
      		Site admin can manage delete and create all posts and comments including super user
        		Site admin can manage all comments and likes including super user
+
 US24 - Manage User Accounts
 	- Acceptance Criteria:
  		Superuser/admin can edit users accounts
    	- I have tested:
     		Superuser can edit all user accounts
+
 US25 - Delete User Accounts
 	- Acceptance Criteria:
  		Admins can delete users accounts
@@ -467,6 +471,7 @@ US25 - Delete User Accounts
     		Admin account can delete other user accounts
 
 **Blog Posts**
+
 US3 - User Story: View post list
 	- Acceptance Criteria:
  		All available blog post are presented on blog page
@@ -478,6 +483,7 @@ US3 - User Story: View post list
    		all posts are sorted most recent
      		Blog previews have all details in preview item
        		When the view reaches 6 a new page is created and the Next button is created
+
 US4 - User Story: Open a blog post
 	- Acceptance Criteria:
 		Blog post Author, image, title, date created, profile link, likes and comments on screen
@@ -487,7 +493,8 @@ US4 - User Story: Open a blog post
    		Blog posts with all post fields are shown on the screen
      		Like and comments responded when the user is logged in
        		likes and comments are not available if a user isn't logged in
-US5 - User Story: Create a blog post
+
+S5 - User Story: Create a blog post
 	- Acceptance Criteria:
 		Registered and logged-in users will be able to create their posts
 		Users should be able to complete the post form with all required fields
@@ -496,6 +503,7 @@ US5 - User Story: Create a blog post
   		Logged in user created own blog test post
     		User completed blog post form all required fields
       		users can upload custom photo
+
 US6 - User Story: Edit Post
 	- Acceptance Criteria:
 		Registed and logged users will be able to edit their own blog posts
@@ -503,6 +511,7 @@ US6 - User Story: Edit Post
  	- I have tested:
   		Logged in user can only edit own post
     		Login user can edit post and complete all required blog fields
+
 US7 - User Story: Delete post
 	- Acceptance Criteria:
 		Registered and logged-in users can delete their blog posts
@@ -510,12 +519,15 @@ US7 - User Story: Delete post
  	- I have tested:
   		Logged in user can delete own post
     		The user confirms that the delete post with delete Modal
+
 US8 - Placeholder Images
 	- Acceptance Criteria:
  		Registered and logged-in users will be able to create their posts using the generated placeholder image
 	- I have tested:
  		Not submitting an image then uses a placeholder
+
 **User Profiles**
+
 US21 - View Profile
 	- Acceptance Criteria:
 		Able to view my profile and read my information
@@ -523,6 +535,7 @@ US21 - View Profile
  	- I have tested:
   		User can view profiles and read information
     		Non-logged-in or other users can read the profile page
+
 US22 - Edit User Profile
 	- Acceptance Criteria:
 		registered and logged-in users can edit their own profiles
@@ -532,6 +545,7 @@ US22 - Edit User Profile
   		Logged user can edit their own profile
     		Only logged in user to edit their own profile
       		Logged in users can update all fields or no fields only bio required
+
 US23 - Delete Profile/Account
 	- Acceptance Criteria:
 		Registered and logged-in users can delete their profile and account
@@ -539,7 +553,9 @@ US23 - Delete Profile/Account
  	- I have tested:
  		Logged in user can delete their profile
    		Logged in user is presented with confirm delete profile
+
 **Comments**
+
 US9 - View total comments
 	- Acceptance Criteria:
 		The total comments will be viewed on blog view previews
@@ -547,6 +563,7 @@ US9 - View total comments
  	- I have tested:
   		Total comments are visible on blog preview
     		Total comments are visible on blog post
+
 US12 - Leave a comment
 	- Acceptance Criteria:
 		Registered and logged in users can leave a comment on a post
@@ -554,6 +571,7 @@ US12 - Leave a comment
  	- I have tested:
 		Logged users can leave a comment on a post
   		User name is shown as comment name, content and date post and visible
+
 US13 - View Comments
 	- Acceptance Criteria:
 		All comments are visible when viewing a blog post
@@ -561,6 +579,7 @@ US13 - View Comments
  	- I have tested:
   		All comment are visible on blog posts
     		Comments are sorted by most recent
+
 US15 - Update Comments
 	- Acceptance Criteria:
 		Registered and logged-in users will be able to edit their comments
@@ -568,6 +587,7 @@ US15 - Update Comments
  	- I have tested:
   		Logged in user can edit their own comments
     		Logged in user can edit own comment and complete update form
+
 US16 - Delete Comments
 	- Acceptance Criteria:
 		Registered and logged-in users can delete their comments on a post
@@ -577,6 +597,7 @@ US16 - Delete Comments
     		Logged in user has delete modal appear to confirm deletion
 
 **Likes**
+
 US10 - View Total Likes
 	- Acceptance Criteria:
 		View the number of likes on the blog list preview
@@ -586,6 +607,7 @@ US10 - View Total Likes
    		Can see number of likes on blog preview
  		Icon matches number of likes on post
    		Total count is displayed next to heart
+
 US11 - Leave a like
 	- Acceptance Criteria:
 		The user must be registered and logged in to like a user post
@@ -593,6 +615,7 @@ US11 - Leave a like
  	- I have tested:
   		Logged in user can leave a like, non logged in user cannot
     		User likes comment fills heart, user unlike fill is removed. Works correctly
+
 US14 - View Likes
 	- Acceptance Criteria:
 		See likes in blog previews and on the blog post
@@ -602,6 +625,7 @@ US14 - View Likes
      		Matching icon to likes on preview
 
 **UX/UI**
+
 US17 - Responsiveness
 	- Acceptance Criteria:
 		Responsive design on different screen sizes
@@ -609,6 +633,7 @@ US17 - Responsiveness
  	- I have tested:
   		Responsive design is adaptiv to all screen sizes
     		Tested on 320px and above 1400px all working as expected.
+
 US18 - Site Design
 	- Acceptance Criteria:
 		Users are presented with an appealing website that is easy to navigate
@@ -618,6 +643,7 @@ US18 - Site Design
   		All usered are presented with a simple yet stylish blog design and easy to navigate and clear
     		Site passes accessability lighthouse test
       		User can view all image and text on the website. alt tags provided if not(Not the case)
+
 US19 - System messages
 	- Acceptance Criteria:
 		Registered and logged-in users will get feedback through pop-up messages
@@ -625,6 +651,7 @@ US19 - System messages
  	- I have tested:
   		Logged in users after action recived message display.
     		Message auto closes after 2.5seconds
+
 US20 - Favicon
 	- Acceptance Criteria:
  		User is presented with favicon that is matching design of the site
