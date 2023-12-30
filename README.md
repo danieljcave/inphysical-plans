@@ -15,6 +15,7 @@ Live Version of the website - <a href="https://p3-battleship-dc-6afed2473960.her
 * [**Design**](#design)
     * [**Features**](#features)
         * [**Navbar**](#navbar)
+        * [**Home page**](#home-page---blog-preview)
 
 
 
@@ -74,4 +75,31 @@ Live Version of the website - <a href="https://p3-battleship-dc-6afed2473960.her
 ### Features
 
 ### Navbar
-The navbar is a feature that is present on all sites, it uses bootstraps built in fixed top feature
+The navbar is a feature that is present on all sites, it uses bootstraps-built styling and uses fixed-top to keep the navigation bar at the top of the page even when scrolling to allow users a better user experience.
+
+On the left-hand side of the navbar holds the Blog Logo and Title, which can be clicked and takes the user to the home page.
+
+The right-hand side of the navigation page holds the key URLs. When a user is not logged in it displays as:
+- Not Logged in: Home, Register, Login and "You're Not Logged In" text to inform the user
+![Navbar logged out view](/readME-assets/features/Navbar_logged_out.png)
+
+- Logged in: Home, Create a Post, Profile, Logout and User Icon and Name
+![Navbar logged in view](/readME-assets/features/nav_bar.png) 
+
+<details>
+<summary>View collapsed navbar:</summary>
+
+![Navbar Collapse](/readME-assets/features/nav_bar_mobile.png)
+</details>
+
+### Home page - Blog Preview
+The home page view is the center of the website. This is where all of the blog posts are held for the users to view right of the bat. The home page uses both base.html and index.html. The base.html holds all of the information needed to make this website work. It hold the header and all the necisary tags, Navbar and footer, container for messages and the main content which uses python block content tags to display. 
+
+The home page divides the blog preview posts into 3 seperate colums, on mobile view it goes to a single column view. The page will hold 6 blog post previews before a pagination if statement will create a new page. Then a button at the bottom of the page will appear for the user to browse through all of the blogs
+
+![Blog Preview Page](/readME-assets/features/home_page.png)
+
+<details>
+<summary>View Home Page Collapsed</summary>
+![HomePage Collapsed](/)
+</details>
