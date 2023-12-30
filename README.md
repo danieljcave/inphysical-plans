@@ -16,7 +16,6 @@ Live Version of the website - <a href="https://p3-battleship-dc-6afed2473960.her
     - [Features](#features)
     - [Navbar](#navbar)
     - [Home page - Blog Preview](#home-page---blog-preview)
-=======
 * [**User Experience**](#user-experience)
     * [**Target Audience**](#target-audience)
     * [**User Goals**](#user-goals)
