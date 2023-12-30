@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from .models import Profile
 from blog.models import Post
@@ -82,7 +82,7 @@ class DeleteProfile(LoginRequiredMixin,
         """
         Success url for account deleted
         """
-        return reverse_lazy("home")
+        return reverse('home')
 
     def delete(self, request, *args, **kwargs):
         """
