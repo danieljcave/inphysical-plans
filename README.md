@@ -3,12 +3,11 @@
 ## **Milestone Project 4 for Code Institute Full Stack Software Development.**
 ### Author - Daniel Cave
 
-InPhysical plans is a training blog that allows both users and trainer to post their own training plans and interact with other users. InPhysical Plans allows users to create blog posts and like or comment on the posts. Users can interact with posts to ask questions leave reviews or improvements to the plans and the author can interact with them. 
+InPhysical Plans is a training blog that allows both users and trainer to post their training plans and interact with other users. InPhysical Plans allows users to create blog posts and like or comment on the posts. Users can interact with posts to ask questions leave reviews or improvements to the plans and the author can interact with them. 
 
 Live Version of the website - <a href="https://p3-battleship-dc-6afed2473960.herokuapp.com/" target="_blank">Click Here!</a>
 
 ## Table Of Contents
-<<<<<<< HEAD
 - [**InPhysical Plans**](#inphysical-plans)
   - [**Milestone Project 4 for Code Institute Full Stack Software Development.**](#milestone-project-4-for-code-institute-full-stack-software-development)
     - [Author - Daniel Cave](#author---daniel-cave)
@@ -30,7 +29,6 @@ Live Version of the website - <a href="https://p3-battleship-dc-6afed2473960.her
     * [**Features**](#features)
         * [**Navbar**](#navbar)
         * [**Home page**](#home-page---blog-preview)
->>>>>>> 4486cef2132651548a1ff2ed87840ee4eb6abbaa
 
 
 
@@ -39,14 +37,14 @@ Live Version of the website - <a href="https://p3-battleship-dc-6afed2473960.her
 - Fitness enthusiasts of all levels.
 - Users interested in a new fitness plan or looking for ideas.
 - Individuals looking to share their workout plans with others.
-- Fitness lovers looking for a platform to share their knowledge with like minded others.
+- Fitness lovers looking for a platform to share their knowledge with like-minded others.
 
 ### **User Goals**
 - Share personal fitness plans and insights in blog posts.
 - Connect with other fitness enthusiasts and build a hub for all users.
-- To stay informed with latest fitness plans and advice from all users.
-- Easily navigate to blog post in relevent content.
-- Customize their profiles and to engage with the other users through comments and likes.
+- To stay informed with the latest fitness plans and advice from all users.
+- Easily navigate to blog posts in relevant content.
+- Customize their profiles and engage with the other users through comments and likes.
 
 ### **User Stories**
 **Admin and Account**
@@ -108,9 +106,9 @@ The right-hand side of the navigation page holds the key URLs. When a user is no
 </details>
 
 ### Home page - Blog Preview
-The home page view is the center of the website. This is where all of the blog posts are held for the users to view right of the bat. The home page uses both base.html and index.html. The base.html holds all of the information needed to make this website work. It hold the header and all the necisary tags, Navbar and footer, container for messages and the main content which uses python block content tags to display. 
+The home page view is the centre of the website. This is where all of the blog posts are held for the users to view right off the bat. The home page uses both base.html and index.html. The base.html holds all of the information needed to make this website work. It holds the header and all the necessary tags, the Navbar and footer, the container for messages and the main content which uses python block content tags to display. 
 
-The home page divides the blog preview posts into 3 seperate colums, on mobile view it goes to a single column view. The page will hold 6 blog post previews before a pagination if statement will create a new page. Then a button at the bottom of the page will appear for the user to browse through all of the blogs
+The home page divides the blog preview posts into 3 separate columns, on mobile view, it goes to a single-column view. The page will hold 6 blog post previews before a pagination if a statement creates a new page. Then a button at the bottom of the page will appear for the user to browse through all of the blogs
 
 ![Blog Preview Page](/readME-assets/features/home_page.png)
 
