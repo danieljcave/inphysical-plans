@@ -23,7 +23,7 @@ Live Version of the website - <a href="https://inphysical-plans-e97fa8a6618e.her
     - [**Update Comments**](#update-comments)
     - [**Delete Comments**](#delete-comments)
     - [**Delete Post**](#delete-post)
-    - [**Custom Error Page**]
+    - [**Custom Error Page**](#custom-error-pages)
   - [**User Accounts**](#user-accounts)
     - [**Register Account**](#register-account)
     - [**Login Page**](#login-page)
