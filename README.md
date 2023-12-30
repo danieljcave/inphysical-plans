@@ -5,7 +5,7 @@
 
 InPhysical Plans is a training blog that allows both users and trainer to post their training plans and interact with other users. InPhysical Plans allows users to create blog posts and like or comment on the posts. Users can interact with posts to ask questions leave reviews or improvements to the plans and the author can interact with them. 
 
-Live Version of the website - <a href="https://p3-battleship-dc-6afed2473960.herokuapp.com/" target="_blank">Click Here!</a>
+Live Version of the website - <a href="" target="_blank">Click Here!</a>
 
 ## Table Of Contents
 - [**User Experience**](#user-experience)
@@ -464,46 +464,168 @@ US25 - Delete User Accounts
 
 **Blog Posts**
 US3 - User Story: View post list
+	- Acceptance Criteria:
+ 		All available blog post are presented on blog page
+		Posts are sorted by most recent
+		Blog preview with Author, Image, Title and date created is shown on the blog preview
+		Paginated view, maximum of 6 per page, Next or Prev button if more than 6
+	- I have tested:
+ 		All the blog posts that are posted are present on the page
+   		all posts are sorted most recent
+     		Blog previews have all details in preview item
+       		When the view reaches 6 a new page is created and the Next button is created
 US4 - User Story: Open a blog post
+	- Acceptance Criteria:
+		Blog post Author, image, title, date created, profile link, likes and comments on screen
+		Likes and comments are accessible to users logged in.
+		Likes and comments are not available to users if not logged in.
+  	- I have tested:
+   		Blog posts with all post fields are shown on the screen
+     		Like and comments responded when the user is logged in
+       		likes and comments are not available if a user isn't logged in
 US5 - User Story: Create a blog post
+	- Acceptance Criteria:
+		Registered and logged-in users will be able to create their posts
+		Users should be able to complete the post form with all required fields
+		Users can upload custom photos for blog posts
+ 	- I have tested:
+  		Logged in user created own blog test post
+    		User completed blog post form all required fields
+      		users can upload custom photo
 US6 - User Story: Edit Post
+	- Acceptance Criteria:
+		Registed and logged users will be able to edit their own blog posts
+		Logged in users should be able to complete all required blog form fields.
+ 	- I have tested:
+  		Logged in user can only edit own post
+    		Login user can edit post and complete all required blog fields
 US7 - User Story: Delete post
+	- Acceptance Criteria:
+		Registered and logged-in users can delete their blog posts
+		Users should have to confirm that they want to delete their posts
+ 	- I have tested:
+  		Logged in user can delete own post
+    		The user confirms that the delete post with delete Modal
 US8 - Placeholder Images
-
+	- Acceptance Criteria:
+ 		Registered and logged-in users will be able to create their posts using the generated placeholder image
+	- I have tested:
+ 		Not submitting an image then uses a placeholder
 **User Profiles**
 US21 - View Profile
+	- Acceptance Criteria:
+		Able to view my profile and read my information
+		View other users' profiles
+ 	- I have tested:
+  		User can view profiles and read information
+    		Non-logged-in or other users can read the profile page
 US22 - Edit User Profile
+	- Acceptance Criteria:
+		registered and logged-in users can edit their own profiles
+		Only user logged in can edit their own profiles
+		Users can update their chosen fields, if they don't want to add personal info they don't have to.
+ 	- I have tested:
+  		Logged user can edit their own profile
+    		Only logged in user to edit their own profile
+      		Logged in users can update all fields or no fields only bio required
 US23 - Delete Profile/Account
-
+	- Acceptance Criteria:
+		Registered and logged-in users can delete their profile and account
+		Users are presented with a confirmation message, instructing if delete their profile they can post, comment or like.
+ 	- I have tested:
+ 		Logged in user can delete their profile
+   		Logged in user is presented with confirm delete profile
 **Comments**
 US9 - View total comments
+	- Acceptance Criteria:
+		The total comments will be viewed on blog view previews
+		The total comments will be viewed inside the blogs post content
+ 	- I have tested:
+  		Total comments are visible on blog preview
+    		Total comments are visible on blog post
 US12 - Leave a comment
+	- Acceptance Criteria:
+		Registered and logged in users can leave a comment on a post
+		Commenters' name, content and dates posted are visible as comment
+ 	- I have tested:
+		Logged users can leave a comment on a post
+  		User name is shown as comment name, content and date post and visible
 US13 - View Comments
+	- Acceptance Criteria:
+		All comments are visible when viewing a blog post
+		Comments are sorted by date created, to comment like a conversation
+ 	- I have tested:
+  		All comment are visible on blog posts
+    		Comments are sorted by most recent
 US15 - Update Comments
+	- Acceptance Criteria:
+		Registered and logged-in users will be able to edit their comments
+		Users should be able to edit and complete comment form
+ 	- I have tested:
+  		Logged in user can edit their own comments
+    		Logged in user can edit own comment and complete update form
 US16 - Delete Comments
+	- Acceptance Criteria:
+		Registered and logged-in users can delete their comments on a post
+		User should have to confirm before deleting their own comments
+ 	- I have tested:
+  		Logged in user can delete own comment
+    		Logged in user has delete modal appear to confirm deletion
 
 **Likes**
 US10 - View Total Likes
+	- Acceptance Criteria:
+		View the number of likes on the blog list preview
+		Have matching like icon to allow user to like post and interact
+		Display Total like count next to heart icon
+  	- I have tested:
+   		Can see number of likes on blog preview
+ 		Icon matches number of likes on post
+   		Total count is displayed next to heart
 US11 - Leave a like
+	- Acceptance Criteria:
+		The user must be registered and logged in to like a user post
+		Include matching icon to display if liked or not
+ 	- I have tested:
+  		Logged in user can leave a like, non logged in user cannot
+    		User likes comment fills heart, user unlike fill is removed. Works correctly
 US14 - View Likes
+	- Acceptance Criteria:
+		See likes in blog previews and on the blog post
+		Include matching icon to likes
+  	- I have tested:
+   		Can see like in preview on the blog post
+     		Matching icon to likes on preview
 
 **UX/UI**
 US17 - Responsiveness
+	- Acceptance Criteria:
+		Responsive design on different screen sizes
+		Users should be able to use the website on small devices that are 320px and above
+ 	- I have tested:
+  		Responsive design is adaptiv to all screen sizes
+    		Tested on 320px and above 1400px all working as expected.
 US18 - Site Design
+	- Acceptance Criteria:
+		Users are presented with an appealing website that is easy to navigate
+		Site meets accessibility guidelines
+		User is able to view all images and text on the website
+ 	- I have tested:
+  		All usered are presented with a simple yet stylish blog design and easy to navigate and clear
+    		Site passes accessability lighthouse test
+      		User can view all image and text on the website. alt tags provided if not(Not the case)
 US19 - System messages
+	- Acceptance Criteria:
+		Registered and logged-in users will get feedback through pop-up messages
+		The pop-up message should disappear automatically
+ 	- I have tested:
+  		Logged in users after action recived message display.
+    		Message auto closes after 2.5seconds
 US20 - Favicon
-
-
-
-
-
-
-
-
-
-
-
-
+	- Acceptance Criteria:
+ 		User is presented with favicon that is matching design of the site
+	- I have tested:
+ 		Favicon is displayed in user tab icon as expected.
 
 ## Deployment
 I used the following steps to deply to Heroku:
@@ -512,8 +634,8 @@ I used the following steps to deply to Heroku:
 1. Top right corner in heroku select Create New App
 2. I call the app InPhysical-plans and set region to "Europe"
 3. Once the app is created i choose deployment method for "Connect to github"
-4. after Logging in and authenticating github, i typed in and selected my repo that i was using for my project.
-5. When the repo appeared, i clicked Connect Button.
+4. After logging in and authenticating GitHub, i typed in and selected my repo that i was using for my project.
+5. When the repo appeared, I clicked Connect Button.
 6. Once connected i had the option to deploy.
 7. I went to my setting in heroku and added the following to my Config Vars
     - CLOUDINARY_URL - Conntect to Cloudinary DB
